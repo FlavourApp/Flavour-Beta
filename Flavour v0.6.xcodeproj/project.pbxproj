@@ -14,6 +14,14 @@
 		806AE6971A0AE92A007C269A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 806AE6961A0AE92A007C269A /* Images.xcassets */; };
 		806AE69A1A0AE92A007C269A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 806AE6981A0AE92A007C269A /* LaunchScreen.xib */; };
 		806AE6A61A0AE92A007C269A /* Flavour_v0_6Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6A51A0AE92A007C269A /* Flavour_v0_6Tests.m */; };
+		806AE6B51A0AF2B6007C269A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6B01A0AF2B6007C269A /* TableViewController.m */; };
+		806AE6B61A0AF2B6007C269A /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6B21A0AF2B6007C269A /* TableViewCell.m */; };
+		806AE6B71A0AF2B6007C269A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6B41A0AF2B6007C269A /* DetailViewController.m */; };
+		806AE6BC1A0AF4D0007C269A /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6B91A0AF4D0007C269A /* LoadingViewController.m */; };
+		806AE6BD1A0AF4D0007C269A /* FailedLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6BB1A0AF4D0007C269A /* FailedLoadingViewController.m */; };
+		806AE6C01A0AF6A5007C269A /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6BF1A0AF6A5007C269A /* StartViewController.m */; };
+		806AE6C31A0B0663007C269A /* DateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6C21A0B0663007C269A /* DateTableViewController.m */; };
+		806AE6C61A0B069D007C269A /* DateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6C51A0B069D007C269A /* DateTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,22 @@
 		806AE69F1A0AE92A007C269A /* Flavour v0.6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flavour v0.6Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		806AE6A41A0AE92A007C269A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		806AE6A51A0AE92A007C269A /* Flavour_v0_6Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flavour_v0_6Tests.m; sourceTree = "<group>"; };
+		806AE6AF1A0AF2B6007C269A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		806AE6B01A0AF2B6007C269A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		806AE6B11A0AF2B6007C269A /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		806AE6B21A0AF2B6007C269A /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		806AE6B31A0AF2B6007C269A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		806AE6B41A0AF2B6007C269A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		806AE6B81A0AF4D0007C269A /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
+		806AE6B91A0AF4D0007C269A /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
+		806AE6BA1A0AF4D0007C269A /* FailedLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FailedLoadingViewController.h; sourceTree = "<group>"; };
+		806AE6BB1A0AF4D0007C269A /* FailedLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FailedLoadingViewController.m; sourceTree = "<group>"; };
+		806AE6BE1A0AF6A5007C269A /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		806AE6BF1A0AF6A5007C269A /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		806AE6C11A0B0663007C269A /* DateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTableViewController.h; sourceTree = "<group>"; };
+		806AE6C21A0B0663007C269A /* DateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTableViewController.m; sourceTree = "<group>"; };
+		806AE6C41A0B069D007C269A /* DateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTableViewCell.h; sourceTree = "<group>"; };
+		806AE6C51A0B069D007C269A /* DateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +109,22 @@
 				806AE68E1A0AE92A007C269A /* AppDelegate.m */,
 				806AE6901A0AE92A007C269A /* ViewController.h */,
 				806AE6911A0AE92A007C269A /* ViewController.m */,
+				806AE6BE1A0AF6A5007C269A /* StartViewController.h */,
+				806AE6BF1A0AF6A5007C269A /* StartViewController.m */,
+				806AE6B81A0AF4D0007C269A /* LoadingViewController.h */,
+				806AE6B91A0AF4D0007C269A /* LoadingViewController.m */,
+				806AE6BA1A0AF4D0007C269A /* FailedLoadingViewController.h */,
+				806AE6BB1A0AF4D0007C269A /* FailedLoadingViewController.m */,
+				806AE6AF1A0AF2B6007C269A /* TableViewController.h */,
+				806AE6B01A0AF2B6007C269A /* TableViewController.m */,
+				806AE6B11A0AF2B6007C269A /* TableViewCell.h */,
+				806AE6B21A0AF2B6007C269A /* TableViewCell.m */,
+				806AE6B31A0AF2B6007C269A /* DetailViewController.h */,
+				806AE6B41A0AF2B6007C269A /* DetailViewController.m */,
+				806AE6C11A0B0663007C269A /* DateTableViewController.h */,
+				806AE6C21A0B0663007C269A /* DateTableViewController.m */,
+				806AE6C41A0B069D007C269A /* DateTableViewCell.h */,
+				806AE6C51A0B069D007C269A /* DateTableViewCell.m */,
 				806AE6931A0AE92A007C269A /* Main.storyboard */,
 				806AE6961A0AE92A007C269A /* Images.xcassets */,
 				806AE6981A0AE92A007C269A /* LaunchScreen.xib */,
@@ -221,7 +261,15 @@
 			files = (
 				806AE6921A0AE92A007C269A /* ViewController.m in Sources */,
 				806AE68F1A0AE92A007C269A /* AppDelegate.m in Sources */,
+				806AE6BD1A0AF4D0007C269A /* FailedLoadingViewController.m in Sources */,
+				806AE6C31A0B0663007C269A /* DateTableViewController.m in Sources */,
+				806AE6C01A0AF6A5007C269A /* StartViewController.m in Sources */,
 				806AE68C1A0AE929007C269A /* main.m in Sources */,
+				806AE6BC1A0AF4D0007C269A /* LoadingViewController.m in Sources */,
+				806AE6B61A0AF2B6007C269A /* TableViewCell.m in Sources */,
+				806AE6C61A0B069D007C269A /* DateTableViewCell.m in Sources */,
+				806AE6B51A0AF2B6007C269A /* TableViewController.m in Sources */,
+				806AE6B71A0AF2B6007C269A /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
