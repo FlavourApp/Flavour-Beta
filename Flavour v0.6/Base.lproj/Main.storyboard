@@ -87,8 +87,17 @@
                                 <rect key="frame" x="40" y="111" width="240" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EuJ-YT-KXn">
-                                <rect key="frame" x="40" y="369" width="240" height="128"/>
+                                <rect key="frame" x="220" y="274" width="240" height="128"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dev-gx-Gxl">
+                                <rect key="frame" x="97" y="476" width="156" height="30"/>
+                                <state key="normal" title="Ver fechas Disponibles">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rUc-jl-Xie" kind="showDetail" identifier="goToDateTable" id="qwz-Os-nbY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -113,18 +122,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1kE-HG-v9C">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1kE-HG-v9C" id="NER-kG-8Cb">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="I0W-Yx-Y2o" customClass="DateTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DateTableViewCell" rowHeight="75" id="I0W-Yx-Y2o" customClass="DateTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I0W-Yx-Y2o" id="XwF-u8-0zr">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwg-ym-dAf">
+                                            <rect key="frame" x="15" y="15" width="322" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="TitleLabel" destination="vwg-ym-dAf" id="IU4-j8-vK8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -135,7 +149,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vJ-dr-41X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1623" y="669"/>
+            <point key="canvasLocation" x="1623" y="667"/>
         </scene>
         <!--Item-->
         <scene sceneID="OSf-TI-gPv">
@@ -216,7 +230,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xym-m6-06H" kind="presentation" id="smY-sU-uSL"/>
+                                    <segue destination="xym-m6-06H" kind="show" id="smY-sU-uSL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -254,7 +268,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="ecb-Np-vr5" kind="modal" identifier="loadingSuccess" modalTransitionStyle="flipHorizontal" id="mDL-dY-kCE"/>
+                        <segue destination="ecb-Np-vr5" kind="showDetail" identifier="loadingSuccess" id="mDL-dY-kCE"/>
                         <segue destination="G85-nj-ATL" kind="modal" identifier="loadingFailure" animates="NO" id="gJd-2k-YxX"/>
                     </connections>
                 </viewController>

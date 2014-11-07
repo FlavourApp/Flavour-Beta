@@ -8,7 +8,7 @@
 
 #import "TableViewCell.h"
 
-@interface DateTableViewCell : TableViewCell
+@interface DateTableViewCell : UITableViewCell
 
 @property (strong,nonatomic) IBOutlet UILabel *TitleLabel;
 
