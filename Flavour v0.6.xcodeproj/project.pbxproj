@@ -22,6 +22,11 @@
 		806AE6C01A0AF6A5007C269A /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6BF1A0AF6A5007C269A /* StartViewController.m */; };
 		806AE6C31A0B0663007C269A /* DateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6C21A0B0663007C269A /* DateTableViewController.m */; };
 		806AE6C61A0B069D007C269A /* DateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 806AE6C51A0B069D007C269A /* DateTableViewCell.m */; };
+		807FBB741A11825700B20301 /* chefObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB731A11825700B20301 /* chefObject.m */; };
+		807FBB771A11A04E00B20301 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB761A11A04E00B20301 /* MenuTableViewController.m */; };
+		807FBB7A1A11A18E00B20301 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB791A11A18E00B20301 /* MenuTableViewCell.m */; };
+		80B5CC721A11B80B00CC36C6 /* ConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */; };
+		80B5CC751A11C5C900CC36C6 /* OrderingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B5CC741A11C5C900CC36C6 /* OrderingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,16 @@
 		806AE6C21A0B0663007C269A /* DateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTableViewController.m; sourceTree = "<group>"; };
 		806AE6C41A0B069D007C269A /* DateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTableViewCell.h; sourceTree = "<group>"; };
 		806AE6C51A0B069D007C269A /* DateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTableViewCell.m; sourceTree = "<group>"; };
+		807FBB721A11825700B20301 /* chefObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chefObject.h; sourceTree = "<group>"; };
+		807FBB731A11825700B20301 /* chefObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chefObject.m; sourceTree = "<group>"; };
+		807FBB751A11A04E00B20301 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		807FBB761A11A04E00B20301 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		807FBB781A11A18E00B20301 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		807FBB791A11A18E00B20301 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		80B5CC701A11B80B00CC36C6 /* ConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmationViewController.h; sourceTree = "<group>"; };
+		80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationViewController.m; sourceTree = "<group>"; };
+		80B5CC731A11C5C900CC36C6 /* OrderingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderingViewController.h; sourceTree = "<group>"; };
+		80B5CC741A11C5C900CC36C6 /* OrderingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +140,19 @@
 				806AE6C21A0B0663007C269A /* DateTableViewController.m */,
 				806AE6C41A0B069D007C269A /* DateTableViewCell.h */,
 				806AE6C51A0B069D007C269A /* DateTableViewCell.m */,
+				807FBB751A11A04E00B20301 /* MenuTableViewController.h */,
+				807FBB761A11A04E00B20301 /* MenuTableViewController.m */,
+				807FBB781A11A18E00B20301 /* MenuTableViewCell.h */,
+				807FBB791A11A18E00B20301 /* MenuTableViewCell.m */,
+				80B5CC701A11B80B00CC36C6 /* ConfirmationViewController.h */,
+				80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */,
+				80B5CC731A11C5C900CC36C6 /* OrderingViewController.h */,
+				80B5CC741A11C5C900CC36C6 /* OrderingViewController.m */,
 				806AE6931A0AE92A007C269A /* Main.storyboard */,
 				806AE6961A0AE92A007C269A /* Images.xcassets */,
 				806AE6981A0AE92A007C269A /* LaunchScreen.xib */,
+				807FBB721A11825700B20301 /* chefObject.h */,
+				807FBB731A11825700B20301 /* chefObject.m */,
 				806AE6891A0AE929007C269A /* Supporting Files */,
 			);
 			path = "Flavour v0.6";
@@ -259,14 +284,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				807FBB741A11825700B20301 /* chefObject.m in Sources */,
 				806AE6921A0AE92A007C269A /* ViewController.m in Sources */,
 				806AE68F1A0AE92A007C269A /* AppDelegate.m in Sources */,
 				806AE6BD1A0AF4D0007C269A /* FailedLoadingViewController.m in Sources */,
+				80B5CC721A11B80B00CC36C6 /* ConfirmationViewController.m in Sources */,
 				806AE6C31A0B0663007C269A /* DateTableViewController.m in Sources */,
 				806AE6C01A0AF6A5007C269A /* StartViewController.m in Sources */,
 				806AE68C1A0AE929007C269A /* main.m in Sources */,
 				806AE6BC1A0AF4D0007C269A /* LoadingViewController.m in Sources */,
+				807FBB771A11A04E00B20301 /* MenuTableViewController.m in Sources */,
 				806AE6B61A0AF2B6007C269A /* TableViewCell.m in Sources */,
+				807FBB7A1A11A18E00B20301 /* MenuTableViewCell.m in Sources */,
+				80B5CC751A11C5C900CC36C6 /* OrderingViewController.m in Sources */,
 				806AE6C61A0B069D007C269A /* DateTableViewCell.m in Sources */,
 				806AE6B51A0AF2B6007C269A /* TableViewController.m in Sources */,
 				806AE6B71A0AF2B6007C269A /* DetailViewController.m in Sources */,
@@ -462,6 +492,7 @@
 				806AE6AB1A0AE92A007C269A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		806AE6AC1A0AE92A007C269A /* Build configuration list for PBXNativeTarget "Flavour v0.6Tests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +501,7 @@
 				806AE6AE1A0AE92A007C269A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

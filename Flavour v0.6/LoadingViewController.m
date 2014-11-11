@@ -8,6 +8,7 @@
 
 #import "LoadingViewController.h"
 #import "TableViewController.h"
+#import "chefObject.h"
 
 @interface LoadingViewController ()
 
@@ -22,6 +23,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.fullChefList = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -33,9 +35,12 @@
     
     self.fullChefList = [[NSMutableArray alloc] init];
     
+    //NSString *serverIp = @"http://192.168.1.32:8001/data/chefs?comuna=las%20condes";
+    NSString *serverIp = @"http://186.106.211.230:8001/data/chefs?comuna=las%20condes";
+    
     self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:@"http://192.168.1.32:8000/flavour/chefs"]];
+                             [NSURL URLWithString:serverIp]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
 }
@@ -88,32 +93,17 @@
     
     // convert from JSON
     NSError *myError = nil;
-    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
-    
-    // show all values
-    for(id key in res) {
-        
-        id value = [res objectForKey:key];
-        NSString *keyAsString = (NSString *)key;
-        
-        if([keyAsString  isEqual: @"chefs"])
+    NSArray *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+    if(res != nil)
+    {
+        for(NSDictionary *chefDict in res)
         {
-            NSArray *chefArray = (NSArray *)value;
-            self.fullChefList = [NSMutableArray arrayWithArray:chefArray];
-            
-
+            chefObject *chef = [[chefObject alloc] initWithDictionary:chefDict];
+            [self.fullChefList addObject:chef];
         }
-        //NSLog(@"value: %@", valueAsArray);
+        //self.fullChefList = [NSMutableArray arrayWithArray:res];
+       // NSLog(@"RESPONSE===%@",res);
     }
-    
-    // extract specific value...
-    //NSArray *results = [res objectForKey:@"results"];
-    /*
-     for (NSDictionary *result in results) {
-     NSString *icon = [result objectForKey:@"icon"];
-     NSLog(@"icon: %@", icon);
-     }
-     */
     [self performSegueWithIdentifier:@"loadingSuccess" sender:self];
 }
 

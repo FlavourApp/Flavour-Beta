@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "chefObject.h"
 
 @interface DateTableViewController : UITableViewController
 
 @property (nonatomic,strong) NSMutableArray *Title;
+@property (nonatomic, strong) chefObject *chef;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "TableViewCell.h"
+#import "chefObject.h"
 
 @interface DateTableViewCell : UITableViewCell
 

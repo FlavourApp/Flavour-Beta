@@ -31,15 +31,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *fullName = [[[_chef objectForKey:@"name"] stringByAppendingString:@" "] stringByAppendingString:[_chef objectForKey:@"lastname"]];
-    _TitleLabel.text = fullName;
+
+    _TitleLabel.text = _chef.fullName;
     
-    _DescriptionLabel.text = [_chef objectForKey:@"description"];
+    _DescriptionLabel.text = _chef.bio;
     
     self.dates = [[NSMutableArray alloc] init];
     
     //This is used for images loaded from url.organi
-    NSURL *url = [NSURL URLWithString:[_chef objectForKey:@"pictureUrl"]];
+    NSURL *url = [NSURL URLWithString:_chef.pictureUrl];
     NSData *data = [NSData dataWithContentsOfURL:url];
     _CookImage.image = [UIImage imageWithData:data];
     
@@ -50,16 +50,20 @@
     //_CookImage.image = [UIImage imageNamed:_DetailModal[2]];
     //_FoodImage.image = [UIImage imageNamed:_DetailModal[3]];
     
-    self.navigationItem.title = fullName;
+    self.navigationItem.title = _chef.fullName;
     
     self.responseData = [NSMutableData data];
     
-    int chefId = (int)([self.chef objectForKey:@"chefId"]);
-    NSLog(@"chefId:%d",chefId);
+    NSString *chefId = _chef.pk;
+
     
     //TODO: REMOVE THIS FIX!
-    chefId = 1;
-    NSString *URL = [ NSString stringWithFormat:@"http://192.168.1.32:8000/flavour/dates?chefId=%d", chefId ];
+    //chefId = 1;
+    
+    
+    
+    //NSString *URL = [ NSString stringWithFormat:@"http://192.168.1.32:8000/data/dates?chefId=%@", chefId ];
+    NSString *URL = [ NSString stringWithFormat:@"http://186.106.211.230:8001/data/dates?chefId=%@", chefId ];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
                                     [NSURL URLWithString:URL]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
@@ -104,7 +108,7 @@
         DateTableViewController *dateTableViewController = [segue destinationViewController];
         NSLog(@"PREPARING SEGUE3");
         dateTableViewController.Title = [NSMutableArray arrayWithArray:self.dates];
-        NSLog(@"PREPARING SEGUE3");
+        dateTableViewController.chef = _chef;
     }
     else if([[segue identifier] isEqualToString:@"loadingFailure"]) {
         

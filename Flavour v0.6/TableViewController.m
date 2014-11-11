@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "TableViewCell.h"
 #import "DetailViewController.h"
+#import "chefObject.h"
 
 @interface TableViewController ()
 
@@ -81,22 +82,24 @@
     // Configure the cell...
     int row = [indexPath row];
     
-    NSDictionary *chef = [NSDictionary dictionaryWithDictionary: _fullChefList[row]];
+    chefObject *chef = _fullChefList[row];
     
-    NSString *name = [chef objectForKey:@"name"];
-    NSString *lastname = [chef objectForKey:@"lastname"];
-    NSString *fullName = [[name stringByAppendingString:@" "] stringByAppendingString:lastname];
-    
-    cell.TitleLabel.text = fullName;
-    cell.DescriptionLabel.text = [chef objectForKey:@""];
+    NSLog(@"setting title...");
+    cell.TitleLabel.text = chef.fullName;
+    NSLog(@"setting description...");
+    cell.DescriptionLabel.text = chef.bio;
     
     //This is used for fixed images.
     //cell.ThumbImage.image = [UIImage imageNamed:_Images[row]];
     
     //This is used for images loaded from url.organi
-    NSURL *url = [NSURL URLWithString:[chef objectForKey:@"pictureUrl"]];
+    NSLog(@"getting url:%@",chef.pictureUrl);
+    NSURL *url = [NSURL URLWithString:chef.pictureUrl];
+    NSLog(@"getting Data");
     NSData *data = [NSData dataWithContentsOfURL:url];
+    NSLog(@"setting thumbimage");
     cell.ThumbImage.image = [UIImage imageWithData:data];
+    NSLog(@"return");
     return cell;
 }
 
@@ -108,7 +111,7 @@
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         int row = [myIndexPath row];
         
-        detailviewcontroller.chef = [NSDictionary dictionaryWithDictionary:[_fullChefList objectAtIndex:row]];
+        detailviewcontroller.chef = [_fullChefList objectAtIndex:row];
         
     }
 }

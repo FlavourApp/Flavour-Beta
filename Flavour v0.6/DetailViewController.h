@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "chefObject.h"
 
 @interface DetailViewController : UIViewController
 
@@ -15,6 +16,6 @@
 @property (strong,nonatomic) IBOutlet UIImageView *CookImage;
 @property (strong,nonatomic) IBOutlet UIImageView *FoodImage;
 
-@property (strong,nonatomic) NSDictionary *chef;
+@property (strong,nonatomic) chefObject *chef;
 
 @end

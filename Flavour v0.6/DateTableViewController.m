@@ -8,8 +8,12 @@
 
 #import "DateTableViewController.h"
 #import "DateTableViewCell.h"
+#import "MenuTableViewController.h"
 
 @interface DateTableViewController ()
+
+@property (nonatomic, strong) NSMutableData *responseData;
+@property (nonatomic, strong) NSArray *menus;
 
 @end
 
@@ -25,10 +29,58 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    for (NSString *str in self.Title) {
-        NSLog(@"strs2:%@",str);
-    }
+    self.menus = [[NSMutableArray alloc] init];
+   
+    self.responseData = [NSMutableData data];
     
+    NSString *chefId = _chef.pk;
+    
+    
+    //TODO: REMOVE THIS FIX!
+    //chefId = 1;
+    
+    
+    
+    //NSString *URL = [ NSString stringWithFormat:@"http://192.168.1.32:8000/data/dates?chefId=%@", chefId ];
+    NSString *URL = [ NSString stringWithFormat:@"http://186.106.211.230:8001/data/menus?chefId=%@", chefId ];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
+                                    [NSURL URLWithString:URL]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [request setHTTPMethod: @"GET"];
+    
+    
+    NSError *requestError;
+    NSURLResponse *urlResponse = nil;
+    
+    
+    NSData *response1 = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"goToMenuTable"]) {
+
+        MenuTableViewController *menuTableViewController = [segue destinationViewController];
+        NSLog(@"PREPARING SEGUE3 : asigning menus to menus");
+        menuTableViewController.Menus = _menus;
+        NSLog(@"PREPARING SEGUE3: assigning chef to chef");
+        menuTableViewController.chef = _chef;
+        
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        int row = [myIndexPath row];
+        
+        menuTableViewController.date = [self.Title objectAtIndex:row];
+        
+    }
+    else if([[segue identifier] isEqualToString:@"loadingFailure"]) {
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,49 +113,31 @@
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+//Conection methods
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    NSLog(@"didReceiveResponse");
+    [self.responseData setLength:0];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [self.responseData appendData:data];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"didFailWithError");
+    NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
+    [self performSegueWithIdentifier:@"loadingFailure" sender:self];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"connectionDidFinishLoading");
+    NSLog(@"Succeeded! Received %d bytes of data",[self.responseData length]);
+    
+    // convert from JSON
+    NSError *myError = nil;
+    NSArray *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+    if(res != nil)
+    {
+        self.menus = [NSArray arrayWithArray:res];
+    }
 }
-*/
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
