@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "DateTableViewController.h"
+#import "globals.h"
 
 @interface DetailViewController ()
 
@@ -43,12 +44,8 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     _CookImage.image = [UIImage imageWithData:data];
     
-//    NSURL *url2 = [NSURL URLWithString:_DetailModal[3]];
-//    NSData *data2 = [NSData dataWithContentsOfURL:url2];
     _FoodImage.image = [UIImage imageWithData:data];
-    
-    //_CookImage.image = [UIImage imageNamed:_DetailModal[2]];
-    //_FoodImage.image = [UIImage imageNamed:_DetailModal[3]];
+
     
     self.navigationItem.title = _chef.fullName;
     
@@ -57,13 +54,7 @@
     NSString *chefId = _chef.pk;
 
     
-    //TODO: REMOVE THIS FIX!
-    //chefId = 1;
-    
-    
-    
-    //NSString *URL = [ NSString stringWithFormat:@"http://192.168.1.32:8000/data/dates?chefId=%@", chefId ];
-    NSString *URL = [ NSString stringWithFormat:@"http://186.106.211.230:8001/data/dates?chefId=%@", chefId ];
+    NSString *URL = [globals getIPDatesForChef:chefId];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
                                     [NSURL URLWithString:URL]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData

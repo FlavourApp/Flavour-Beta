@@ -25,6 +25,10 @@
 		807FBB741A11825700B20301 /* chefObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB731A11825700B20301 /* chefObject.m */; };
 		807FBB771A11A04E00B20301 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB761A11A04E00B20301 /* MenuTableViewController.m */; };
 		807FBB7A1A11A18E00B20301 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB791A11A18E00B20301 /* MenuTableViewCell.m */; };
+		80A8B1901A1429DB00689579 /* globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A8B18F1A1429DB00689579 /* globals.m */; };
+		80A8B1921A14462500689579 /* iphoneButtonBig[5].png in Resources */ = {isa = PBXBuildFile; fileRef = 80A8B1911A14462500689579 /* iphoneButtonBig[5].png */; };
+		80A8B1941A1454B500689579 /* logo 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 80A8B1931A1454B500689579 /* logo 5.png */; };
+		80A8B1961A1455F100689579 /* logo 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 80A8B1951A1455F100689579 /* logo 4.png */; };
 		80B5CC721A11B80B00CC36C6 /* ConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */; };
 		80B5CC751A11C5C900CC36C6 /* OrderingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B5CC741A11C5C900CC36C6 /* OrderingViewController.m */; };
 /* End PBXBuildFile section */
@@ -75,6 +79,11 @@
 		807FBB761A11A04E00B20301 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		807FBB781A11A18E00B20301 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		807FBB791A11A18E00B20301 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		80A8B18E1A1429DB00689579 /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
+		80A8B18F1A1429DB00689579 /* globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = globals.m; sourceTree = "<group>"; };
+		80A8B1911A14462500689579 /* iphoneButtonBig[5].png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphoneButtonBig[5].png"; sourceTree = "<group>"; };
+		80A8B1931A1454B500689579 /* logo 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo 5.png"; sourceTree = "<group>"; };
+		80A8B1951A1455F100689579 /* logo 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo 4.png"; sourceTree = "<group>"; };
 		80B5CC701A11B80B00CC36C6 /* ConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmationViewController.h; sourceTree = "<group>"; };
 		80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationViewController.m; sourceTree = "<group>"; };
 		80B5CC731A11C5C900CC36C6 /* OrderingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderingViewController.h; sourceTree = "<group>"; };
@@ -153,6 +162,8 @@
 				806AE6981A0AE92A007C269A /* LaunchScreen.xib */,
 				807FBB721A11825700B20301 /* chefObject.h */,
 				807FBB731A11825700B20301 /* chefObject.m */,
+				80A8B18E1A1429DB00689579 /* globals.h */,
+				80A8B18F1A1429DB00689579 /* globals.m */,
 				806AE6891A0AE929007C269A /* Supporting Files */,
 			);
 			path = "Flavour v0.6";
@@ -161,6 +172,9 @@
 		806AE6891A0AE929007C269A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				80A8B1931A1454B500689579 /* logo 5.png */,
+				80A8B1951A1455F100689579 /* logo 4.png */,
+				80A8B1911A14462500689579 /* iphoneButtonBig[5].png */,
 				806AE68A1A0AE929007C269A /* Info.plist */,
 				806AE68B1A0AE929007C269A /* main.m */,
 			);
@@ -233,9 +247,11 @@
 				TargetAttributes = {
 					806AE6851A0AE929007C269A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 6GCLZC9QR7;
 					};
 					806AE69E1A0AE92A007C269A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 6GCLZC9QR7;
 						TestTargetID = 806AE6851A0AE929007C269A;
 					};
 				};
@@ -266,7 +282,10 @@
 			files = (
 				806AE6951A0AE92A007C269A /* Main.storyboard in Resources */,
 				806AE69A1A0AE92A007C269A /* LaunchScreen.xib in Resources */,
+				80A8B1961A1455F100689579 /* logo 4.png in Resources */,
+				80A8B1941A1454B500689579 /* logo 5.png in Resources */,
 				806AE6971A0AE92A007C269A /* Images.xcassets in Resources */,
+				80A8B1921A14462500689579 /* iphoneButtonBig[5].png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +306,7 @@
 				807FBB741A11825700B20301 /* chefObject.m in Sources */,
 				806AE6921A0AE92A007C269A /* ViewController.m in Sources */,
 				806AE68F1A0AE92A007C269A /* AppDelegate.m in Sources */,
+				80A8B1901A1429DB00689579 /* globals.m in Sources */,
 				806AE6BD1A0AF4D0007C269A /* FailedLoadingViewController.m in Sources */,
 				80B5CC721A11B80B00CC36C6 /* ConfirmationViewController.m in Sources */,
 				806AE6C31A0B0663007C269A /* DateTableViewController.m in Sources */,
@@ -423,9 +443,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Flavour v0.6/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -433,9 +456,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Flavour v0.6/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -443,6 +469,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -454,6 +482,7 @@
 				INFOPLIST_FILE = "Flavour v0.6Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flavour v0.6.app/Flavour v0.6";
 			};
 			name = Debug;
@@ -462,6 +491,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -469,6 +500,7 @@
 				INFOPLIST_FILE = "Flavour v0.6Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flavour v0.6.app/Flavour v0.6";
 			};
 			name = Release;

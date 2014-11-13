@@ -9,6 +9,7 @@
 #import "DateTableViewController.h"
 #import "DateTableViewCell.h"
 #import "MenuTableViewController.h"
+#import "globals.h"
 
 @interface DateTableViewController ()
 
@@ -40,9 +41,7 @@
     //chefId = 1;
     
     
-    
-    //NSString *URL = [ NSString stringWithFormat:@"http://192.168.1.32:8000/data/dates?chefId=%@", chefId ];
-    NSString *URL = [ NSString stringWithFormat:@"http://186.106.211.230:8001/data/menus?chefId=%@", chefId ];
+    NSString *URL = [globals getIPMenusForChef:chefId];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
                                     [NSURL URLWithString:URL]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData

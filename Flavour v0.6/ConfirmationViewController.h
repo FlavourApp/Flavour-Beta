@@ -18,11 +18,14 @@
 @property (strong, nonatomic) IBOutlet UIImageView *foodImage;
 
 @property (strong, nonatomic) NSString *chef;
+@property (strong, nonatomic) NSString *chefPk;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *menu;
+@property (strong, nonatomic) NSString *menuPk;
 @property (strong, nonatomic) NSString *descriptionString;
 @property (strong, nonatomic) NSString *price;
 @property (strong, nonatomic) NSString *chefImageUrl;
 @property (strong, nonatomic) NSString *foodImageUrl;
 
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @end

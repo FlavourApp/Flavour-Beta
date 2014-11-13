@@ -7,6 +7,7 @@
 //
 
 #import "chefObject.h"
+#import "globals.h"
 
 @implementation chefObject
 
@@ -40,8 +41,7 @@
 -(NSString *)getRealUrl:(NSString *)localUrl
 {
     NSString * localUrlFixed = [localUrl substringFromIndex:1];
-    NSString *ImgUrl = [@"http://186.106.211.230:8001/media" stringByAppendingString:localUrlFixed];
-    return ImgUrl;
+    return [globals getIPImagesForUrl:localUrlFixed];
 }
 
 @end

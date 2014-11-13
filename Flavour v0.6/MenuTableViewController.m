@@ -9,6 +9,7 @@
 #import "MenuTableViewController.h"
 #import "MenuTableViewCell.h"
 #import "ConfirmationViewController.h"
+#import "globals.h"
 
 @interface MenuTableViewController ()
 
@@ -63,7 +64,7 @@
    
     NSString *localUrl = [fields objectForKey:@"picture"];
     NSString * localUrlFixed = [localUrl substringFromIndex:1];
-    NSString *ImgUrl = [@"http://186.106.211.230:8001/media" stringByAppendingString:localUrlFixed];
+    NSString *ImgUrl = [globals getIPImagesForUrl:localUrlFixed];
     NSURL *url = [NSURL URLWithString:ImgUrl];
     NSData *data = [NSData dataWithContentsOfURL:url];
     cell.picture.image = [UIImage imageWithData:data];
@@ -87,8 +88,10 @@
         
         
         confirmationViewController.chef = _chef.fullName;
+        confirmationViewController.chefPk = _chef.pk;
         confirmationViewController.date = _date;
         confirmationViewController.menu = [fields objectForKey:@"name"];
+        confirmationViewController.menuPk = [_Menus[row] objectForKey:@"pk"];
         confirmationViewController.descriptionString = [fields objectForKey:@"description"];
         confirmationViewController.price = [fields objectForKey:@"precio"];
       
@@ -96,7 +99,7 @@
         //food image:
         NSString *localUrl = [fields objectForKey:@"picture"];
         NSString * localUrlFixed = [localUrl substringFromIndex:1];
-        confirmationViewController.foodImageUrl = [@"http://186.106.211.230:8001/media" stringByAppendingString:localUrlFixed];
+        confirmationViewController.foodImageUrl = [globals getIPImagesForUrl:localUrlFixed];
         
         
         
