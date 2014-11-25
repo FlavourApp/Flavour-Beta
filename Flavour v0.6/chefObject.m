@@ -28,6 +28,7 @@
         self.pictureUrl = [self getRealUrl:[fields objectForKey:@"picture"]];
         
         self.bio = [fields objectForKey:@"description"];
+        self.longBio = [fields objectForKey:@"bio"];
         self.email = [fields objectForKey:@"email"];
         self.phone = [fields objectForKey:@"phone"];
         

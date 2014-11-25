@@ -36,6 +36,7 @@
     _TitleLabel.text = _chef.fullName;
     
     _DescriptionLabel.text = _chef.bio;
+    _bioLabel.text = _chef.longBio;
     
     self.dates = [[NSMutableArray alloc] init];
     

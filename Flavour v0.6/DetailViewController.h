@@ -15,6 +15,7 @@
 @property (strong,nonatomic) IBOutlet UILabel *DescriptionLabel;
 @property (strong,nonatomic) IBOutlet UIImageView *CookImage;
 @property (strong,nonatomic) IBOutlet UIImageView *FoodImage;
+@property (strong, nonatomic) IBOutlet UILabel *bioLabel;
 
 @property (strong,nonatomic) chefObject *chef;
 

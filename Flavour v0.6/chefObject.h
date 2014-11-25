@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *pictureUrl;
 @property (strong, nonatomic) NSString *bio;
+@property (strong, nonatomic) NSString *longBio;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *lastName;
 @property (strong, nonatomic) NSString *fullName;

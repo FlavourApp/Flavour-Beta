@@ -107,6 +107,13 @@
     // Configure the cell...
     int row = [indexPath row];
     
+    //coloring alternate rows
+    if(row%2==0)
+    {
+        cell.contentView.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f];
+        cell.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f];
+    }
+    
     cell.TitleLabel.text = _Title[row];
     
     return cell;

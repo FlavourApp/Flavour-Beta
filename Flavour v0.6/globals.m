@@ -12,7 +12,7 @@
 
 +(NSString*) getIp
 {
-    return @"http://186.107.98.151:8001";
+    return @"http://flavour.ddns.net:8001";
 }
 
 +(NSString*) getChefsIp

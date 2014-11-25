@@ -29,6 +29,7 @@
 		80A8B1921A14462500689579 /* iphoneButtonBig[5].png in Resources */ = {isa = PBXBuildFile; fileRef = 80A8B1911A14462500689579 /* iphoneButtonBig[5].png */; };
 		80A8B1941A1454B500689579 /* logo 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 80A8B1931A1454B500689579 /* logo 5.png */; };
 		80A8B1961A1455F100689579 /* logo 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 80A8B1951A1455F100689579 /* logo 4.png */; };
+		80AF70451A1AB7A4001B9747 /* portada.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80AF70441A1AB7A4001B9747 /* portada.jpg */; };
 		80B5CC721A11B80B00CC36C6 /* ConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */; };
 		80B5CC751A11C5C900CC36C6 /* OrderingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B5CC741A11C5C900CC36C6 /* OrderingViewController.m */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		80A8B1911A14462500689579 /* iphoneButtonBig[5].png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphoneButtonBig[5].png"; sourceTree = "<group>"; };
 		80A8B1931A1454B500689579 /* logo 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo 5.png"; sourceTree = "<group>"; };
 		80A8B1951A1455F100689579 /* logo 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo 4.png"; sourceTree = "<group>"; };
+		80AF70441A1AB7A4001B9747 /* portada.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portada.jpg; sourceTree = "<group>"; };
 		80B5CC701A11B80B00CC36C6 /* ConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmationViewController.h; sourceTree = "<group>"; };
 		80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationViewController.m; sourceTree = "<group>"; };
 		80B5CC731A11C5C900CC36C6 /* OrderingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderingViewController.h; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		806AE6891A0AE929007C269A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				80AF70441A1AB7A4001B9747 /* portada.jpg */,
 				80A8B1931A1454B500689579 /* logo 5.png */,
 				80A8B1951A1455F100689579 /* logo 4.png */,
 				80A8B1911A14462500689579 /* iphoneButtonBig[5].png */,
@@ -285,6 +288,7 @@
 				80A8B1961A1455F100689579 /* logo 4.png in Resources */,
 				80A8B1941A1454B500689579 /* logo 5.png in Resources */,
 				806AE6971A0AE92A007C269A /* Images.xcassets in Resources */,
+				80AF70451A1AB7A4001B9747 /* portada.jpg in Resources */,
 				80A8B1921A14462500689579 /* iphoneButtonBig[5].png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -82,6 +82,13 @@
     // Configure the cell...
     int row = [indexPath row];
     
+    //setting alternate colors:
+    if(row%2==0)
+    {
+        cell.contentView.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f];
+        cell.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f];
+    }
+    
     chefObject *chef = _fullChefList[row];
     
     NSLog(@"setting title...");
