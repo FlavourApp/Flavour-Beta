@@ -25,6 +25,7 @@
 		807FBB741A11825700B20301 /* chefObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB731A11825700B20301 /* chefObject.m */; };
 		807FBB771A11A04E00B20301 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB761A11A04E00B20301 /* MenuTableViewController.m */; };
 		807FBB7A1A11A18E00B20301 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB791A11A18E00B20301 /* MenuTableViewCell.m */; };
+		80A39F9A1A5E0874000A7781 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A39F991A5E0874000A7781 /* SuccessViewController.m */; };
 		80A8B1901A1429DB00689579 /* globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A8B18F1A1429DB00689579 /* globals.m */; };
 		80A8B1921A14462500689579 /* iphoneButtonBig[5].png in Resources */ = {isa = PBXBuildFile; fileRef = 80A8B1911A14462500689579 /* iphoneButtonBig[5].png */; };
 		80A8B1941A1454B500689579 /* logo 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 80A8B1931A1454B500689579 /* logo 5.png */; };
@@ -80,6 +81,8 @@
 		807FBB761A11A04E00B20301 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		807FBB781A11A18E00B20301 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		807FBB791A11A18E00B20301 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		80A39F981A5E0874000A7781 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
+		80A39F991A5E0874000A7781 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
 		80A8B18E1A1429DB00689579 /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
 		80A8B18F1A1429DB00689579 /* globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = globals.m; sourceTree = "<group>"; };
 		80A8B1911A14462500689579 /* iphoneButtonBig[5].png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphoneButtonBig[5].png"; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */,
 				80B5CC731A11C5C900CC36C6 /* OrderingViewController.h */,
 				80B5CC741A11C5C900CC36C6 /* OrderingViewController.m */,
+				80A39F981A5E0874000A7781 /* SuccessViewController.h */,
+				80A39F991A5E0874000A7781 /* SuccessViewController.m */,
 				806AE6931A0AE92A007C269A /* Main.storyboard */,
 				806AE6961A0AE92A007C269A /* Images.xcassets */,
 				806AE6981A0AE92A007C269A /* LaunchScreen.xib */,
@@ -317,6 +322,7 @@
 				806AE6C01A0AF6A5007C269A /* StartViewController.m in Sources */,
 				806AE68C1A0AE929007C269A /* main.m in Sources */,
 				806AE6BC1A0AF4D0007C269A /* LoadingViewController.m in Sources */,
+				80A39F9A1A5E0874000A7781 /* SuccessViewController.m in Sources */,
 				807FBB771A11A04E00B20301 /* MenuTableViewController.m in Sources */,
 				806AE6B61A0AF2B6007C269A /* TableViewCell.m in Sources */,
 				807FBB7A1A11A18E00B20301 /* MenuTableViewCell.m in Sources */,

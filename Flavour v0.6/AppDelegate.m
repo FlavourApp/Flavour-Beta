@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SuccessViewController.h"
 
 @interface AppDelegate ()
 
@@ -40,6 +41,44 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    NSLog(@"Hemos sido invocados con: %@",url.scheme);
+    if ([url.scheme isEqualToString:@"khipuinstalled"]) {
+        // khipu no estaba instalada al momento de ser requerido. Al terminar su instalación revisa si existe alguna aplicación que haya registrado el esquema khipuinstalled
+        
+        // Recuperamos la URL del cobro que aún no se ha podido procesar
+        NSURL *myURL = [[NSUserDefaults standardUserDefaults] URLForKey:@"pendingURL"];
+        if (!myURL) {
+            // En caso que la url ya no exista, respondemos que nuestra aplicación no es la que va a responder a esta invocación
+            return NO;
+        }else{
+            // dado que tenemos la URL del cobro pendiente, realizamos nuevamente la llamada, y esta vez será capturada por khipu
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pendingURL"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            [[UIApplication sharedApplication] openURL:myURL];
+        }
+        return YES;
+    }else if ([url.scheme isEqualToString:@"flavour"]) {
+        // khipu nos ha invocado, con el resultado del cobro
+        [(UINavigationController *)self.window.rootViewController popToRootViewControllerAnimated:NO];
+        NSString *message = @"";
+        
+        if ([url.description containsString:@"success"]){
+            // falla al procesar el cobro
+            message = @"El servicio de pago informó que no se ha realizado el pago. Por favor intenta más tarde";
+            [[[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }else{
+            // el cobro ha sido realizado.
+            SuccessViewController *SuccessViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SuccessViewController"];
+            [(UINavigationController *)self.window.rootViewController pushViewController:SuccessViewController animated:NO];
+        }
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end
