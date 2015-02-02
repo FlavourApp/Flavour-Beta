@@ -92,7 +92,7 @@
     [aNSMutableURLRequest setHTTPMethod:@"POST"];
     
     NSString *chefId = self.chefId;
-    NSString *payer_email = self.userMail;
+    NSString *payer_email = self.email;
     NSString *dateId = self.dateId;
     NSString *menuId = self.menuId;
     

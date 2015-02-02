@@ -13,7 +13,12 @@
 @property (strong, nonatomic) NSString *chefId;
 @property (strong, nonatomic) NSString *dateId;
 @property (strong, nonatomic) NSString *menuId;
-@property (strong, nonatomic) NSString *userMail;
+
+
+@property (weak, nonatomic)  NSString *name;
+@property (weak, nonatomic)  NSString *direction;
+@property (weak, nonatomic)  NSString *cellphone;
+@property (weak, nonatomic)  NSString *email;
 
 -(void)goToNextScene;
 

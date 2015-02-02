@@ -28,5 +28,7 @@
 @property (strong, nonatomic) NSString *chefImageUrl;
 @property (strong, nonatomic) NSString *foodImageUrl;
 
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UISlider *peopleCountSlider;
+@property (weak, nonatomic) IBOutlet UILabel *peopleCountLabel;
+
 @end

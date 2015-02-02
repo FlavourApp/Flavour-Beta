@@ -7,7 +7,7 @@
 //
 
 #import "ConfirmationViewController.h"
-#import "OrderingViewController.h"
+#import "UserDataViewController.h"
 
 @interface ConfirmationViewController ()
 
@@ -31,6 +31,11 @@
     NSURL *url2 = [NSURL URLWithString:_foodImageUrl];
     NSData *data2 = [NSData dataWithContentsOfURL:url2];
     _foodImage.image = [UIImage imageWithData:data2];
+    
+    _peopleCountSlider.minimumValue = 2;
+    _peopleCountSlider.maximumValue = 10;
+    _peopleCountSlider.continuous = false;
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,16 +50,20 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([[segue identifier] isEqualToString:@"goToOrdering"]) {
+    if ([[segue identifier] isEqualToString:@"goToUserData"]) {
         
-        OrderingViewController *orderingViewController = [segue destinationViewController];
+        UserDataViewController *userDataViewController = [segue destinationViewController];
         
-        orderingViewController.chefId = _chefPk;
-        orderingViewController.menuId = _menuPk;
-        orderingViewController.dateId = _dateId;
-        orderingViewController.userMail = _emailTextField.text;
+        userDataViewController.chefId = _chefPk;
+        userDataViewController.menuId = _menuPk;
+        userDataViewController.dateId = _dateId;
+        userDataViewController.peopleCount = _peopleCountLabel.text;
+        
     }
 }
 
+- (IBAction) sliderValueChanged:(UISlider *)sender {
+    _peopleCountLabel.text = [NSString stringWithFormat:@" %i", (int)([sender value])];
+}
 
 @end
