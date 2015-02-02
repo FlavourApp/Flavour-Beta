@@ -12,7 +12,9 @@
 
 +(NSString*) getIp
 {
-    return @"http://flavour.ddns.net:8001";
+    //return @"http://flavour.ddns.net:8001";
+    //return @"http://54.69.134.41:80";
+    return @"http://186.107.123.67:8001";
 }
 
 +(NSString*) getChefsIp
@@ -40,7 +42,12 @@
 
 +(NSString *) getPostOrderIP
 {
-    return [[self getIp] stringByAppendingString:@"/reserva/"];
+    return [[self getIp] stringByAppendingString:@"/createPayment/"];
+}
+
++(NSString *) getPostPaymentIp
+{
+    return [[self getIp] stringByAppendingString:@"/postPayment/"];
 }
             
 @end

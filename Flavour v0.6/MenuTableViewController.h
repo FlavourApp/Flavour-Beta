@@ -13,6 +13,6 @@
 
 @property (nonatomic,strong) NSArray *Menus;
 @property (strong, nonatomic) chefObject *chef;
-@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSDictionary *date;
 
 @end

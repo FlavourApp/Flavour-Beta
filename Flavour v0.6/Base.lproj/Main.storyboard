@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< Updated upstream
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LZ9-Dd-oTe">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cFg-yp-kVg">
+>>>>>>> Stashed changes
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Lista de Chefs-->
@@ -361,7 +366,7 @@
         <!--Ordering View Controller-->
         <scene sceneID="fFD-C5-m6Z">
             <objects>
-                <viewController id="LZ9-Dd-oTe" customClass="OrderingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderingViewController" id="LZ9-Dd-oTe" customClass="OrderingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VpD-iQ-brt"/>
                         <viewControllerLayoutGuide type="bottom" id="Tss-C9-Bza"/>
@@ -386,7 +391,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="N46-0J-2gX" kind="show" id="8yO-UN-gUW"/>
-                        <segue destination="nyq-1v-8RI" kind="show" identifier="orderingSuccess" id="vut-nt-QQq"/>
+                        <segue destination="nyq-1v-8RI" kind="show" identifier="goToSuccess" id="mw8-om-W3o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC3-Ge-Iqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -427,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hif-CN-93F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4218" y="592"/>
+            <point key="canvasLocation" x="4258" y="665"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Jai-Up-veK">
@@ -523,6 +528,35 @@
             </objects>
             <point key="canvasLocation" x="-1279.5" y="-127.5"/>
         </scene>
+        <!--Tests View Controller-->
+        <scene sceneID="s16-sf-gxe">
+            <objects>
+                <viewController id="dku-g6-Eek" customClass="TestsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UmE-ie-0xc"/>
+                        <viewControllerLayoutGuide type="bottom" id="0km-Kl-4Vr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Yj-rG-eKE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Jan-tH-8mv">
+                                <rect key="frame" x="93" y="61" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testing.." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2B6-Mc-jaX">
+                                <rect key="frame" x="51" y="20" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KdJ-F5-brR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-385" y="-72"/>
+        </scene>
         <!--Start View Controller-->
         <scene sceneID="Hdj-TK-9nD">
             <objects>
@@ -577,12 +611,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-wJ-dv5">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-wJ-dv5">
                                 <rect key="frame" x="142" y="114" width="37" height="37"/>
                             </activityIndicatorView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cargando Datos.. Espere por favor." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSy-U4-jeA">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargando Datos.. Espere por favor." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSy-U4-jeA">
                                 <rect key="frame" x="18" y="213" width="285" height="33"/>
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.45882352941176469" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="LNp-MY-Pks"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -590,6 +627,13 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.45882352941176469" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="UXT-ZK-ld1" firstAttribute="top" secondItem="qSy-U4-jeA" secondAttribute="bottom" constant="322" id="2iD-qg-64b"/>
+                            <constraint firstItem="qSy-U4-jeA" firstAttribute="leading" secondItem="JHd-9E-Ww1" secondAttribute="leadingMargin" constant="2" id="8lR-Fz-NdO"/>
+                            <constraint firstItem="qSy-U4-jeA" firstAttribute="top" secondItem="LRd-wJ-dv5" secondAttribute="bottom" constant="62" id="Tnt-Dn-CWa"/>
+                            <constraint firstItem="qSy-U4-jeA" firstAttribute="centerX" secondItem="JHd-9E-Ww1" secondAttribute="centerX" id="qW2-h4-m9j"/>
+                            <constraint firstItem="qSy-U4-jeA" firstAttribute="centerX" secondItem="LRd-wJ-dv5" secondAttribute="centerX" id="zVN-0A-TNx"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>

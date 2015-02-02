@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSString *chef;
 @property (strong, nonatomic) NSString *chefPk;
 @property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *dateId;
 @property (strong, nonatomic) NSString *menu;
 @property (strong, nonatomic) NSString *menuPk;
 @property (strong, nonatomic) NSString *descriptionString;

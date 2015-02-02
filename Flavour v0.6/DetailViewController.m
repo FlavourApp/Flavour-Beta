@@ -13,7 +13,7 @@
 @interface DetailViewController ()
 
 @property (nonatomic, strong) NSMutableData *responseData;
-@property (nonatomic, strong) NSMutableArray *dates;
+@property (nonatomic, strong) NSArray *dates;
 
 @end
 
@@ -38,7 +38,7 @@
     _DescriptionLabel.text = _chef.bio;
     _bioLabel.text = _chef.longBio;
     
-    self.dates = [[NSMutableArray alloc] init];
+    self.dates = [[NSArray alloc] init];
     
     //This is used for images loaded from url.organi
     NSURL *url = [NSURL URLWithString:_chef.pictureUrl];
@@ -126,33 +126,11 @@
     
     // convert from JSON
     NSError *myError = nil;
-    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
-    
-    // show all values
-    for(id key in res) {
-        
-        id value = [res objectForKey:key];
-        NSString *keyAsString = (NSString *)key;
-
-        if([keyAsString  isEqual: @"dates"])
-        {
-            self.dates = [NSMutableArray arrayWithArray:value];
-            for (NSString* str in self.dates) {
-                NSLog(@"str:%@", str);
-            }
-        }
-        //NSLog(@"value: %@", valueAsArray);
+    NSArray *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+    if(res != nil)
+    {
+        self.dates = [NSArray arrayWithArray:res];
     }
-    
-    // extract specific value...
-    //NSArray *results = [res objectForKey:@"results"];
-    /*
-     for (NSDictionary *result in results) {
-     NSString *icon = [result objectForKey:@"icon"];
-     NSLog(@"icon: %@", icon);
-     }
-     */
-    
 }
 
 

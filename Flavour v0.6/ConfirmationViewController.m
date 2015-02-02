@@ -49,9 +49,9 @@
         
         OrderingViewController *orderingViewController = [segue destinationViewController];
         
-        orderingViewController.chef = _chefPk;
-        orderingViewController.menu = _menuPk;
-        orderingViewController.date = _date;
+        orderingViewController.chefId = _chefPk;
+        orderingViewController.menuId = _menuPk;
+        orderingViewController.dateId = _dateId;
         orderingViewController.userMail = _emailTextField.text;
     }
 }

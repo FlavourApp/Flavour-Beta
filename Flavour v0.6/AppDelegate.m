@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SuccessViewController.h"
+#import "OrderingViewController.h"
 
 @interface AppDelegate ()
 
@@ -46,6 +47,7 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     NSLog(@"Hemos sido invocados con: %@",url.scheme);
+    NSLog(@"Description:%@",url.description);
     if ([url.scheme isEqualToString:@"khipuinstalled"]) {
         // khipu no estaba instalada al momento de ser requerido. Al terminar su instalación revisa si existe alguna aplicación que haya registrado el esquema khipuinstalled
         
@@ -63,17 +65,31 @@
         return YES;
     }else if ([url.scheme isEqualToString:@"flavour"]) {
         // khipu nos ha invocado, con el resultado del cobro
-        [(UINavigationController *)self.window.rootViewController popToRootViewControllerAnimated:NO];
+        //[(UINavigationController *)self.window.rootViewController popToRootViewControllerAnimated:NO];
         NSString *message = @"";
         
         if ([url.description containsString:@"success"]){
             // falla al procesar el cobro
+            //NSLog(@"Entramos a Failure");
             message = @"El servicio de pago informó que no se ha realizado el pago. Por favor intenta más tarde";
             [[[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }else{
             // el cobro ha sido realizado.
-            SuccessViewController *SuccessViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SuccessViewController"];
-            [(UINavigationController *)self.window.rootViewController pushViewController:SuccessViewController animated:NO];
+            
+            /*
+            SuccessViewController *aSuccessViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SuccessViewController"];
+             [(UINavigationController *)self.window.rootViewController pushViewController:aSuccessViewController animated:NO];
+             */
+            
+            
+            UIViewController *presentingController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+            SuccessViewController *controller = (SuccessViewController *)[presentingController.storyboard instantiateViewControllerWithIdentifier: @"SuccessViewController"];
+            [presentingController presentViewController:controller animated:YES completion:nil];
+            
+            //[self.window.rootViewController presentViewController: controller animated:YES completion:nil];
+
+
+
         }
         return YES;
     }

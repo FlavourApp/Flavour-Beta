@@ -10,9 +10,11 @@
 
 @interface OrderingViewController : ViewController
 
-@property (strong, nonatomic) NSString *chef;
-@property (strong, nonatomic) NSString *date;
-@property (strong, nonatomic) NSString *menu;
-@property (strong, nonatomic) NSString * userMail;
+@property (strong, nonatomic) NSString *chefId;
+@property (strong, nonatomic) NSString *dateId;
+@property (strong, nonatomic) NSString *menuId;
+@property (strong, nonatomic) NSString *userMail;
+
+-(void)goToNextScene;
 
 @end

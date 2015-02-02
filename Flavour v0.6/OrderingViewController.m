@@ -9,6 +9,8 @@
 #import "OrderingViewController.h"
 #import "globals.h"
 #import <CommonCrypto/CommonHMAC.h>
+#import "SuccessViewController.h"
+#import "globals.h"
 
 #define ID_DEL_COBRADOR 23003
 #define SECRET_DEL_COBRADOR @"9fa9cc61f7455f4ba3345bd7719ebe5cc9afc0e5"
@@ -17,6 +19,8 @@
 #define AMOUNT_DEMO 35000
 
 @interface OrderingViewController ()
+
+@property (nonatomic, strong) NSMutableData *responseData;
 
 @end
 
@@ -45,8 +49,8 @@
 
 */
 
-    
-    [self performSelector:@selector(createPaymentAndProcess) withObject:nil afterDelay:5.0];
+    self.responseData = [NSMutableData data];
+    [self createPaymentAndProcess];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,8 +59,7 @@
 }
 
 -(void)goToNextScene{
-    NSLog(@"GoToNextScene Called..!");
-    [self performSegueWithIdentifier:@"orderingSuccess" sender:self];
+    [self performSegueWithIdentifier:@"goToSuccess" sender:self];
 }
 
 /*
@@ -84,9 +87,30 @@
     
     [[UIApplication sharedApplication] openURL:myURL];
 }
+-(void)createPaymentAndProcess{
+    NSMutableURLRequest *aNSMutableURLRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[globals getPostOrderIP]]];
+    
+    [aNSMutableURLRequest setHTTPMethod:@"POST"];
+    
+    NSString *chefId = self.chefId;
+    NSString *payer_email = self.userMail;
+    NSString *dateId = self.dateId;
+    NSString *menuId = self.menuId;
+    
+    NSString *postString = [NSString stringWithFormat:@"&payer_email=%@",payer_email];
+    postString = [NSString stringWithFormat:@"%@&chefId=%@", postString,chefId];
+    postString = [NSString stringWithFormat:@"%@&dateId=%@", postString,dateId];
+    postString = [NSString stringWithFormat:@"%@&menuId=%@", postString,menuId];
+    
+    [aNSMutableURLRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [[NSURLConnection alloc] initWithRequest:aNSMutableURLRequest delegate:self];
+    
+}
+
 // Esta funcionalidad debe llamar a tu servidor web para crear el pago. No lo hagas dentro de la aplicación móvil, pues hay información privada
 // que debes utilizar para crear el pago.
-- (void)createPaymentAndProcess {
+- (void)createPaymentAndProcessOriginal {
     
     // Para crear Pagos, no olvides revisar la documentación de nuestra API https://khipu.com/api/1.2/docs
     NSMutableURLRequest *aNSMutableURLRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://khipu.com/api/1.2/createPaymentURL"]];
@@ -152,6 +176,34 @@
     // Invocamos la AppStore con la URL de khipu.
     [[UIApplication sharedApplication]
      openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/us/app/khipu-terminal-de-pagos/id590942451?mt=8"]];
+}
+
+//Conection methods
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    NSLog(@"didReceiveResponse");
+    [self.responseData setLength:0];
+}
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [self.responseData appendData:data];
+}
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"didFailWithError");
+    NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
+    [self performSegueWithIdentifier:@"loadingFailure" sender:self];
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"connectionDidFinishLoading");
+    NSLog(@"Succeeded! Received %d bytes of data",[self.responseData length]);
+    
+    // convert from JSON
+    NSError *myError = nil;
+    NSArray *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+    if(res != nil)
+    {
+        NSLog(@"mobieURL:%@",[res valueForKey:@"mobile-url"]);
+        NSURL *myURL = [NSURL URLWithString:[res valueForKey:@"mobile-url"]];
+        [self processPayment:myURL];
+    }
 }
 
 @end

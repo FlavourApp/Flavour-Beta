@@ -91,20 +91,21 @@
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         int row = [myIndexPath row];
         
-        NSDictionary *fields = [_Menus[row] objectForKey:@"fields"];
+        NSDictionary *menuFields = [_Menus[row] objectForKey:@"fields"];
         
         
         confirmationViewController.chef = _chef.fullName;
         confirmationViewController.chefPk = _chef.pk;
-        confirmationViewController.date = _date;
-        confirmationViewController.menu = [fields objectForKey:@"name"];
+        confirmationViewController.date = [[_date objectForKey:@"fields"] objectForKey:@"date"];
+        confirmationViewController.dateId = [_date objectForKey:@"pk"];
+        confirmationViewController.menu = [menuFields objectForKey:@"name"];
         confirmationViewController.menuPk = [_Menus[row] objectForKey:@"pk"];
-        confirmationViewController.descriptionString = [fields objectForKey:@"description"];
-        confirmationViewController.price = [fields objectForKey:@"precio"];
+        confirmationViewController.descriptionString = [menuFields objectForKey:@"description"];
+        confirmationViewController.price = [menuFields objectForKey:@"precio"];
       
         confirmationViewController.chefImageUrl = _chef.pictureUrl;
         //food image:
-        NSString *localUrl = [fields objectForKey:@"picture"];
+        NSString *localUrl = [menuFields objectForKey:@"picture"];
         NSString * localUrlFixed = [localUrl substringFromIndex:1];
         confirmationViewController.foodImageUrl = [globals getIPImagesForUrl:localUrlFixed];
         
