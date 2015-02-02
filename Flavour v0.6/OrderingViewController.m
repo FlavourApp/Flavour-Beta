@@ -12,7 +12,6 @@
 #import "SuccessViewController.h"
 #import "globals.h"
 
-#define ID_DEL_COBRADOR 23003
 #define SECRET_DEL_COBRADOR @"9fa9cc61f7455f4ba3345bd7719ebe5cc9afc0e5"
 #define EMAIL_DEMO @"info@flavour.com"
 #define SUBJECT_DEMO @"Compra Cena Flavour"
@@ -108,68 +107,6 @@
     
 }
 
-// Esta funcionalidad debe llamar a tu servidor web para crear el pago. No lo hagas dentro de la aplicación móvil, pues hay información privada
-// que debes utilizar para crear el pago.
-- (void)createPaymentAndProcessOriginal {
-    
-    // Para crear Pagos, no olvides revisar la documentación de nuestra API https://khipu.com/api/1.2/docs
-    NSMutableURLRequest *aNSMutableURLRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://khipu.com/api/1.2/createPaymentURL"]];
-    
-    [aNSMutableURLRequest setHTTPMethod:@"POST"];
-    
-    NSString *receiver_id = [NSString stringWithFormat:@"%d", ID_DEL_COBRADOR];
-    NSString *subject = SUBJECT_DEMO;
-    NSString *body = @"";
-    NSString *amount = [NSString stringWithFormat:@"%ld", (long)AMOUNT_DEMO];
-    NSString *notify_url = @"";
-    NSString *return_url = @"flavour://success.flavour.com";
-    NSString *cancel_url = @"flavour://failure.flavour.com";
-    NSString *transaction_id = @"";
-    NSString *payer_email = EMAIL_DEMO;
-    NSString *picture_url = @"";
-    NSString *custom = @"";
-    NSString *bank_id = @"";
-    
-    
-    NSString *postString = [NSString stringWithFormat:@"receiver_id=%@", receiver_id];
-    postString = [NSString stringWithFormat:@"%@&subject=%@", postString,subject];
-    postString = [NSString stringWithFormat:@"%@&body=%@", postString,body];
-    postString = [NSString stringWithFormat:@"%@&amount=%@", postString,amount];
-    postString = [NSString stringWithFormat:@"%@&payer_email=%@", postString,payer_email];
-    postString = [NSString stringWithFormat:@"%@&bank_id=%@", postString,bank_id];
-    postString = [NSString stringWithFormat:@"%@&transaction_id=%@", postString,transaction_id];
-    postString = [NSString stringWithFormat:@"%@&custom=%@", postString,custom];
-    postString = [NSString stringWithFormat:@"%@&notify_url=%@", postString,notify_url];
-    postString = [NSString stringWithFormat:@"%@&return_url=%@", postString,return_url];
-    postString = [NSString stringWithFormat:@"%@&cancel_url=%@", postString,cancel_url];
-    postString = [NSString stringWithFormat:@"%@&picture_url=%@", postString,picture_url];
-    
-    // EL SECRET_DEL_COBRADOR NUNCA DEBE QUEDAR EN TU APP. Esta es información privada
-    NSData *saltData = [SECRET_DEL_COBRADOR dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *paramData = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableData* hash = [NSMutableData dataWithLength:CC_SHA256_DIGEST_LENGTH ];
-    CCHmac(kCCHmacAlgSHA256, saltData.bytes, saltData.length, paramData.bytes, paramData.length, hash.mutableBytes);
-    
-    NSString *hashNSString = [[[[hash description]
-                                stringByReplacingOccurrencesOfString: @"<" withString: @""]
-                               stringByReplacingOccurrencesOfString: @">" withString: @""]
-                              stringByReplacingOccurrencesOfString: @" " withString: @""];
-    
-    postString = [NSString stringWithFormat:@"%@&hash=%@", postString, hashNSString];
-    
-    [aNSMutableURLRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSError *error = nil;
-    NSHTTPURLResponse *response = nil;
-    NSData *conn = [NSURLConnection sendSynchronousRequest:aNSMutableURLRequest returningResponse:&response error:&error];
-    
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:conn options:0 error:nil];
-    
-    NSURL *myURL = [NSURL URLWithString:[json valueForKey:@"mobile-url"]];
-    
-    
-    [self processPayment:myURL];
-}
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
