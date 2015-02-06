@@ -41,8 +41,15 @@
     _bgImageView.animationRepeatCount=0;
     
     [_bgImageView startAnimating];
-
     
+   [self performSelector:@selector(moveImage) withObject:nil afterDelay:3.0f];
+}
+
+- (void)moveImage
+{
+    // Move the image
+    [self moveImage:_bgImageView duration:3.0
+              curve:UIViewAnimationCurveLinear x:50.0 y:0.0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +96,27 @@
         self.comunas = [NSMutableArray arrayWithArray:res];
         _startButton.hidden = false;
     }
+    
+}
+
+//moving images
+
+- (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
+            curve:(int)curve x:(CGFloat)x y:(CGFloat)y
+{
+    // Setup the animation
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:duration];
+    [UIView setAnimationCurve:curve];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    // The transform matrix
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(x, y);
+    image.transform = transform;
+    
+    // Commit the changes
+    [UIView commitAnimations];
+    
 }
 
 
