@@ -12,9 +12,11 @@
 
 +(NSString *) getIp;
 +(NSString *) getChefsIp;
++(NSString *) getChefsIp:(NSString*)comuna;
 +(NSString *) getIPMenusForChef:(NSString*)chefId;
 +(NSString *) getIPDatesForChef:(NSString*)chefId;
 +(NSString *) getIPImagesForUrl:(NSString*)localUrl;
 +(NSString *) getPostOrderIP;
++(NSString *) getComunasIp;
 
 @end

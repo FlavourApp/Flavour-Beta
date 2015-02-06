@@ -22,4 +22,6 @@
  description - String
  -------------------------*/
 
+@property (strong, nonatomic) NSString *comuna;
+
 @end

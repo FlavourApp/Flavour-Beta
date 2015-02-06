@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ComunaViewController.h"
+
 
 @interface StartViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIPickerView *picker;
+
+@property (strong, nonatomic) NSMutableArray *comunas;
+@property (strong, nonatomic) IBOutlet UIButton *startButton;
+@property (strong, nonatomic) IBOutlet UIImageView *bgImageView;
 
 @end

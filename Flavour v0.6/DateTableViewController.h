@@ -11,7 +11,7 @@
 
 @interface DateTableViewController : UITableViewController
 
-@property (nonatomic,strong) NSMutableArray *Title;
+@property (nonatomic,strong) NSMutableArray *dates;
 @property (nonatomic, strong) chefObject *chef;
 
 @end

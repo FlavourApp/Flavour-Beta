@@ -93,7 +93,6 @@
         
         NSDictionary *menuFields = [_Menus[row] objectForKey:@"fields"];
         
-        
         confirmationViewController.chef = _chef.fullName;
         confirmationViewController.chefPk = _chef.pk;
         confirmationViewController.date = [[_date objectForKey:@"fields"] objectForKey:@"date"];

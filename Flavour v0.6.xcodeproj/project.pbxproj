@@ -35,6 +35,8 @@
 		80B0311E1A65BD0F00414341 /* TestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B0311D1A65BD0F00414341 /* TestsViewController.m */; };
 		80B5CC721A11B80B00CC36C6 /* ConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */; };
 		80B5CC751A11C5C900CC36C6 /* OrderingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B5CC741A11C5C900CC36C6 /* OrderingViewController.m */; };
+		80DB69571A84567D00472BE5 /* ComunaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB69561A84567D00472BE5 /* ComunaViewController.m */; };
+		80DB69591A846E9300472BE5 /* restDemo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80DB69581A846E9300472BE5 /* restDemo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,9 @@
 		80B5CC711A11B80B00CC36C6 /* ConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationViewController.m; sourceTree = "<group>"; };
 		80B5CC731A11C5C900CC36C6 /* OrderingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderingViewController.h; sourceTree = "<group>"; };
 		80B5CC741A11C5C900CC36C6 /* OrderingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderingViewController.m; sourceTree = "<group>"; };
+		80DB69551A84567D00472BE5 /* ComunaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComunaViewController.h; sourceTree = "<group>"; };
+		80DB69561A84567D00472BE5 /* ComunaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComunaViewController.m; sourceTree = "<group>"; };
+		80DB69581A846E9300472BE5 /* restDemo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = restDemo.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +151,8 @@
 				806AE6911A0AE92A007C269A /* ViewController.m */,
 				806AE6BE1A0AF6A5007C269A /* StartViewController.h */,
 				806AE6BF1A0AF6A5007C269A /* StartViewController.m */,
+				80DB69551A84567D00472BE5 /* ComunaViewController.h */,
+				80DB69561A84567D00472BE5 /* ComunaViewController.m */,
 				806AE6B81A0AF4D0007C269A /* LoadingViewController.h */,
 				806AE6B91A0AF4D0007C269A /* LoadingViewController.m */,
 				806AE6BA1A0AF4D0007C269A /* FailedLoadingViewController.h */,
@@ -189,6 +196,7 @@
 		806AE6891A0AE929007C269A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				80DB69581A846E9300472BE5 /* restDemo.jpg */,
 				80AF70441A1AB7A4001B9747 /* portada.jpg */,
 				80A8B1931A1454B500689579 /* logo 5.png */,
 				80A8B1951A1455F100689579 /* logo 4.png */,
@@ -304,6 +312,7 @@
 				80A8B1941A1454B500689579 /* logo 5.png in Resources */,
 				806AE6971A0AE92A007C269A /* Images.xcassets in Resources */,
 				80AF70451A1AB7A4001B9747 /* portada.jpg in Resources */,
+				80DB69591A846E9300472BE5 /* restDemo.jpg in Resources */,
 				80A8B1921A14462500689579 /* iphoneButtonBig[5].png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +347,7 @@
 				806AE6B61A0AF2B6007C269A /* TableViewCell.m in Sources */,
 				807FBB7A1A11A18E00B20301 /* MenuTableViewCell.m in Sources */,
 				80B5CC751A11C5C900CC36C6 /* OrderingViewController.m in Sources */,
+				80DB69571A84567D00472BE5 /* ComunaViewController.m in Sources */,
 				806AE6C61A0B069D007C269A /* DateTableViewCell.m in Sources */,
 				806AE6B51A0AF2B6007C269A /* TableViewController.m in Sources */,
 				806AE6B71A0AF2B6007C269A /* DetailViewController.m in Sources */,

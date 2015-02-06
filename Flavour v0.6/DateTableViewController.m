@@ -33,7 +33,7 @@
     self.menus = [[NSMutableArray alloc] init];
    
     self.responseData = [NSMutableData data];
-    
+   
     NSString *chefId = _chef.pk;
     
     
@@ -53,9 +53,10 @@
     NSError *requestError;
     NSURLResponse *urlResponse = nil;
     
-    
+    NSLog(@"%@",request);
     NSData *response1 = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -74,7 +75,7 @@
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         int row = [myIndexPath row];
         
-        menuTableViewController.date = [self.Title objectAtIndex:row];
+        menuTableViewController.date = [self.dates objectAtIndex:row];
         
     }
     else if([[segue identifier] isEqualToString:@"loadingFailure"]) {
@@ -96,7 +97,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _Title.count;
+    return _dates.count;
 }
 
 
@@ -114,7 +115,9 @@
         cell.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f];
     }
     
-    cell.TitleLabel.text = [[_Title[row] objectForKey:@"fields"] objectForKey:@"date"];
+    NSDictionary *date = _dates[row];
+    NSDictionary *field = date[@"fields"];
+    cell.TitleLabel.text = field[@"date"];
     
     return cell;
 }

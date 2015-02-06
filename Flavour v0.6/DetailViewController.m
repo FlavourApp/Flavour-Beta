@@ -99,7 +99,7 @@
         NSLog(@"PREPARING SEGUE2");
         DateTableViewController *dateTableViewController = [segue destinationViewController];
         NSLog(@"PREPARING SEGUE3");
-        dateTableViewController.Title = [NSMutableArray arrayWithArray:self.dates];
+        dateTableViewController.dates = [NSMutableArray arrayWithArray:self.dates];
         dateTableViewController.chef = _chef;
     }
     else if([[segue identifier] isEqualToString:@"loadingFailure"]) {
@@ -126,7 +126,9 @@
     
     // convert from JSON
     NSError *myError = nil;
+    
     NSArray *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+
     if(res != nil)
     {
         self.dates = [NSArray arrayWithArray:res];

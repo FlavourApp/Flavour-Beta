@@ -36,11 +36,12 @@
     
     self.fullChefList = [[NSMutableArray alloc] init];
     
-    NSString *serverIp = [globals getChefsIp];
-    
+    NSString *serverIp = [globals getChefsIp:_comuna];
+    NSLog(@"serverIp:%@",serverIp);
     self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
                              [NSURL URLWithString:serverIp]];
+    NSLog(@"request:%@",request);
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
 }
