@@ -21,9 +21,14 @@
     _chefLabel.text = _chef;
     _dateLabel.text = _date;
     _menuLabel.text = _menu;
-    _descriptionLabel.text = _descriptionString;
+    _descriptionText.text = _descriptionString;
+    
     int price = [_price intValue];
     price = price * 2;
+    
+    [_peopleTable addTarget:self
+                         action:@selector(onPeopleTableChange)
+               forControlEvents:UIControlEventValueChanged];
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -39,14 +44,29 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     _chefImage.image = [UIImage imageWithData:data];
     
-    NSURL *url2 = [NSURL URLWithString:_foodImageUrl];
-    NSData *data2 = [NSData dataWithContentsOfURL:url2];
-    _foodImage.image = [UIImage imageWithData:data2];
+    NSURL *urlFood1 = [NSURL URLWithString:_foodImageUrl];
+    NSData *dataFood1 = [NSData dataWithContentsOfURL:urlFood1];
+    _foodImage.image = [UIImage imageWithData:dataFood1];
     
-    _peopleCountSlider.minimumValue = 2;
-    _peopleCountSlider.maximumValue = 10;
-    _peopleCountSlider.continuous = false;
+    NSURL *urlFood2 = [NSURL URLWithString:_foodImageUrl2];
+    NSData *dataFood2 = [NSData dataWithContentsOfURL:urlFood2];
+    _foodImage.image = [UIImage imageWithData:dataFood2];
    
+}
+
+- (void)onPeopleTableChange
+{
+    int price = [_price intValue];
+    price = price * (_peopleTable.selectedSegmentIndex + 2);
+
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    formatter.currencySymbol = @"$";
+    formatter.currencyGroupingSeparator = @".";
+    formatter.allowsFloats = NO;
+    formatter.maximumFractionDigits = 0;
+    NSString *priceString = [formatter stringFromNumber:[NSNumber numberWithInt:price]];
+    _priceLabel.text = priceString;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,27 +88,10 @@
         userDataViewController.chefId = _chefPk;
         userDataViewController.menuId = _menuPk;
         userDataViewController.dateId = _dateId;
-        userDataViewController.peopleCount = _peopleCountLabel.text;
-        
+        userDataViewController.peopleCount = [_peopleTable titleForSegmentAtIndex:_peopleTable.selectedSegmentIndex];
     }
 }
 
-- (IBAction) sliderValueChanged:(UISlider *)sender {
-    _peopleCountLabel.text = [NSString stringWithFormat:@" %i", (int)([sender value])];
-    int price = [_price intValue];
-    int people = _peopleCountSlider.value;
-    price = price * people;
-    
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    formatter.currencySymbol = @"$";
-    formatter.currencyGroupingSeparator = @".";
-    formatter.allowsFloats = NO;
-    formatter.maximumFractionDigits = 0;
-    
-    NSString *priceString = [formatter stringFromNumber:[NSNumber numberWithInt:price]];
-    _priceLabel.text = priceString;
-    
-}
+
 
 @end

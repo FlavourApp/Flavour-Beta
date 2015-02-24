@@ -12,10 +12,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *chefLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *menuLabel;
-@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonatomic) IBOutlet UITextView *descriptionText;
 @property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *chefImage;
 @property (strong, nonatomic) IBOutlet UIImageView *foodImage;
+@property (strong, nonatomic) IBOutlet UIImageView *foodImage2;
+
+@property (strong, nonatomic) IBOutlet UISegmentedControl *peopleTable;
 
 @property (strong, nonatomic) NSString *chef;
 @property (strong, nonatomic) NSString *chefPk;
@@ -27,8 +30,6 @@
 @property (strong, nonatomic) NSString *price;
 @property (strong, nonatomic) NSString *chefImageUrl;
 @property (strong, nonatomic) NSString *foodImageUrl;
-
-@property (weak, nonatomic) IBOutlet UISlider *peopleCountSlider;
-@property (weak, nonatomic) IBOutlet UILabel *peopleCountLabel;
+@property (strong, nonatomic) NSString *foodImageUrl2;
 
 @end
