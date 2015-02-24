@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "SuccessViewController.h"
 #import "OrderingViewController.h"
+#import "globals.h"
+
 
 @interface AppDelegate ()
 
@@ -16,9 +18,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     return YES;
 }
 
@@ -96,5 +98,7 @@
     
     return NO;
 }
+
+
 
 @end

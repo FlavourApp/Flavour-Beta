@@ -38,16 +38,17 @@
 
     NSLog(@"ViewDidLoad Table View");
 
-    
-
-    
-    //TODO:FIND A PLACE FOR THE FB BUTTON.
-   /* FBLoginView *loginView =
-    [[FBLoginView alloc] initWithReadPermissions:
-     @[@"public_profile", @"email", @"user_friends"]];
-    // Align the button in the center horizontally
-    loginView.frame = CGRectOffset(loginView.frame, 2, 5);
-    [self.view addSubview:loginView];*/
+    // this will appear as the title in the navigation bar
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:20.0];
+    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    label.textAlignment = NSTextAlignmentCenter;
+    // ^-Use UITextAlignmentCenter for older SDKs.
+    label.textColor = [UIColor whiteColor]; // change this color
+    self.navigationItem.titleView = label;
+    label.text = @"Chefs";
+    [label sizeToFit];
 }
 
 

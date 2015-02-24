@@ -66,7 +66,7 @@
     NSDictionary *fields = [_Menus[row] objectForKey:@"fields"];
     
     cell.nameLabel.text = [fields objectForKey:@"name"];
-    cell.descriptionLabel.text = [fields objectForKey:@"description"];
+    cell.descriptionText.text = [fields objectForKey:@"description"];
     cell.priceLabel.text = [NSString stringWithFormat:@"$%@",[fields objectForKey:@"precio"]];
    
     NSString *localUrl = [fields objectForKey:@"picture"];

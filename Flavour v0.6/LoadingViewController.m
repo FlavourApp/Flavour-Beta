@@ -36,6 +36,11 @@
     
     self.fullChefList = [[NSMutableArray alloc] init];
     
+    [self attemptConnection];
+}
+
+-(void) attemptConnection
+{
     NSString *serverIp = [globals getChefsIp:_comuna];
     NSLog(@"serverIp:%@",serverIp);
     self.responseData = [NSMutableData data];
@@ -43,7 +48,6 @@
                              [NSURL URLWithString:serverIp]];
     NSLog(@"request:%@",request);
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,6 +78,12 @@
     }
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // the user clicked retry
+    if (buttonIndex == 0) {
+        [self attemptConnection];
+    }
+}
 
 //Conection methods
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -86,7 +96,10 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError");
     NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
-    [self performSegueWithIdentifier:@"loadingFailure" sender:self];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error de conexión" delegate:self cancelButtonTitle:@"Reintentar" otherButtonTitles:nil, nil];
+    [alert show];
+    //[self performSegueWithIdentifier:@"loadingFailure" sender:self];
 }
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"connectionDidFinishLoading");

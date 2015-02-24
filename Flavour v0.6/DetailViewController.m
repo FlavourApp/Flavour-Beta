@@ -34,9 +34,7 @@
     // Do any additional setup after loading the view.
 
     _TitleLabel.text = _chef.fullName;
-    
-    _DescriptionLabel.text = _chef.bio;
-    _bioLabel.text = _chef.longBio;
+    _bioText.text = _chef.longBio;
     
     self.dates = [[NSArray alloc] init];
     
@@ -44,9 +42,6 @@
     NSURL *url = [NSURL URLWithString:_chef.pictureUrl];
     NSData *data = [NSData dataWithContentsOfURL:url];
     _CookImage.image = [UIImage imageWithData:data];
-    
-    _FoodImage.image = [UIImage imageWithData:data];
-
     
     self.navigationItem.title = _chef.fullName;
     

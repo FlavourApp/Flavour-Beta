@@ -12,11 +12,8 @@
 @interface DetailViewController : UIViewController
 
 @property (strong,nonatomic) IBOutlet UILabel *TitleLabel;
-@property (strong,nonatomic) IBOutlet UILabel *DescriptionLabel;
 @property (strong,nonatomic) IBOutlet UIImageView *CookImage;
-@property (strong,nonatomic) IBOutlet UIImageView *FoodImage;
-@property (strong, nonatomic) IBOutlet UILabel *bioLabel;
-
+@property (strong, nonatomic) IBOutlet UITextView *bioText;
 @property (strong,nonatomic) chefObject *chef;
 
 @end

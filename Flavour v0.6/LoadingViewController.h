@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoadingViewController : UIViewController
+@interface LoadingViewController : UIViewController <UIAlertViewDelegate> 
  
 @property (nonatomic,strong) NSMutableArray *fullChefList;
 /*------- Chef API ----------
