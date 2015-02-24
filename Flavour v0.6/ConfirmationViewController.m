@@ -22,6 +22,7 @@
     _dateLabel.text = _date;
     _menuLabel.text = _menu;
     _descriptionText.text = _descriptionString;
+    _descriptionText.editable = NO;
     
     int price = [_price intValue];
     price = price * 2;

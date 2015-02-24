@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    [self.navigationController setNavigationBarHidden:YES];
     self.responseData = [NSMutableData data];
     [self createPaymentAndProcess];
 }
@@ -91,12 +91,12 @@
     
 }
 
-
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     // Invocamos la AppStore con la URL de khipu.
     [[UIApplication sharedApplication]
      openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/us/app/khipu-terminal-de-pagos/id590942451?mt=8"]];
+    
 }
 
 //Conection methods
@@ -110,7 +110,8 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError");
     NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
-    [self performSegueWithIdentifier:@"loadingFailure" sender:self];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error de conexión" delegate:self cancelButtonTitle:@"Reintentar" otherButtonTitles:nil, nil];
+    [alert show];
 }
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"connectionDidFinishLoading");

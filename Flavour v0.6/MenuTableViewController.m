@@ -56,19 +56,35 @@
     // Configure the cell...
     int row = [indexPath row];
     
-    //setting alternate colors:
+    //setting alternate colors: (no longer used)
+    /*
     if(row%2==0)
     {
         cell.contentView.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f];
         cell.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f];
     }
+    */
     
     NSDictionary *fields = [_Menus[row] objectForKey:@"fields"];
     
     cell.nameLabel.text = [fields objectForKey:@"name"];
     cell.descriptionText.text = [fields objectForKey:@"description"];
-    cell.priceLabel.text = [NSString stringWithFormat:@"$%@",[fields objectForKey:@"precio"]];
-   
+    cell.descriptionText.editable = NO;
+    
+    int price = [[fields objectForKey:@"precio"] intValue];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    formatter.currencySymbol = @"$";
+    formatter.currencyGroupingSeparator = @".";
+    formatter.allowsFloats = NO;
+    formatter.maximumFractionDigits = 0;
+    
+    NSString *priceString = [formatter stringFromNumber:[NSNumber numberWithInt:price]];
+    priceString = [priceString stringByAppendingString:@" CLP por persona"];
+    
+    cell.priceLabel.text = priceString;
+    
     NSString *localUrl = [fields objectForKey:@"picture"];
     NSString * localUrlFixed = [localUrl substringFromIndex:1];
     NSString *ImgUrl = [globals getIPImagesForUrl:localUrlFixed];

@@ -35,7 +35,7 @@
 
     _TitleLabel.text = _chef.fullName;
     _bioText.text = _chef.longBio;
-    
+    _bioText.editable = NO;
     self.dates = [[NSArray alloc] init];
     
     //This is used for images loaded from url.organi
