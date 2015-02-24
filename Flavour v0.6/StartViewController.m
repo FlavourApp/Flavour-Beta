@@ -30,6 +30,8 @@
                              [NSURL URLWithString:serverIp]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
+    //code to animate bg image
+    /*
     NSArray *animationArray=[NSArray arrayWithObjects:
                              [UIImage imageNamed:@"portada.jpg"],
                              [UIImage imageNamed:@"restDemo.jpg"],
@@ -43,6 +45,7 @@
     [_bgImageView startAnimating];
     
    [self performSelector:@selector(moveImage) withObject:nil afterDelay:3.0f];
+     */
 }
 
 - (void)moveImage

@@ -60,12 +60,12 @@
         orderingViewController.dateId = _dateId;
         
         orderingViewController.name = _nameField.text;
-        orderingViewController.direction = _directionField.text;
-        orderingViewController.cellphone = _cellphoneField.text;
+        orderingViewController.adress = _directionField.text;
+        orderingViewController.phone = _cellphoneField.text;
         orderingViewController.email = _emailField.text;
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setValue:_nameField.text forKey:@"userDirection"];
+        [defaults setValue:_nameField.text forKey:@"userName"];
         [defaults setValue:_directionField.text forKey:@"userDirection"];
         [defaults setValue:_cellphoneField.text forKey:@"userCellphone"];
         [defaults setValue:_emailField.text forKey:@"userMail"];

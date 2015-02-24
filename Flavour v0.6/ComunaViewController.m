@@ -20,6 +20,7 @@
     
     self.comunaPickerView.dataSource = self;
     self.comunaPickerView.delegate = self;
+    
 
     
 }
@@ -40,6 +41,16 @@
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     return _pickerData[row];
+}
+
+//change color of picker
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *title = @"sample title";
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:_pickerData[row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    return attString;
+    
 }
 
 // Catpure the picker view selection

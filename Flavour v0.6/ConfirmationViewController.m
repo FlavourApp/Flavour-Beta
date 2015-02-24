@@ -22,7 +22,18 @@
     _dateLabel.text = _date;
     _menuLabel.text = _menu;
     _descriptionLabel.text = _descriptionString;
-    _priceLabel.text = [NSString stringWithFormat:@"$ %@",_price];
+    int price = [_price intValue];
+    price = price * 2;
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    formatter.currencySymbol = @"$";
+    formatter.currencyGroupingSeparator = @".";
+    formatter.allowsFloats = NO;
+    formatter.maximumFractionDigits = 0;
+    
+    NSString *priceString = [formatter stringFromNumber:[NSNumber numberWithInt:price]];
+    _priceLabel.text = priceString;
     
     NSURL *url = [NSURL URLWithString:_chefImageUrl];
     NSData *data = [NSData dataWithContentsOfURL:url];
@@ -64,6 +75,20 @@
 
 - (IBAction) sliderValueChanged:(UISlider *)sender {
     _peopleCountLabel.text = [NSString stringWithFormat:@" %i", (int)([sender value])];
+    int price = [_price intValue];
+    int people = _peopleCountSlider.value;
+    price = price * people;
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    formatter.currencySymbol = @"$";
+    formatter.currencyGroupingSeparator = @".";
+    formatter.allowsFloats = NO;
+    formatter.maximumFractionDigits = 0;
+    
+    NSString *priceString = [formatter stringFromNumber:[NSNumber numberWithInt:price]];
+    _priceLabel.text = priceString;
+    
 }
 
 @end

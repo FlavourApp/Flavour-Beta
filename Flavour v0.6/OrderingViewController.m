@@ -12,11 +12,6 @@
 #import "SuccessViewController.h"
 #import "globals.h"
 
-#define SECRET_DEL_COBRADOR @"9fa9cc61f7455f4ba3345bd7719ebe5cc9afc0e5"
-#define EMAIL_DEMO @"info@flavour.com"
-#define SUBJECT_DEMO @"Compra Cena Flavour"
-#define AMOUNT_DEMO 35000
-
 @interface OrderingViewController ()
 
 @property (nonatomic, strong) NSMutableData *responseData;
@@ -28,25 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    /*
-    NSString *post = [NSString stringWithFormat:@"chef=%@&date=%@&menu=%@&usermail=%@",_chef,_date,_menu,_userMail];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[globals getPostOrderIP]]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-    
-    if(conn) {
-        [self goToNextScene];
-    } else {
-        [self performSegueWithIdentifier:@"orderingFailure" sender:self];
-    }
-
-*/
 
     self.responseData = [NSMutableData data];
     [self createPaymentAndProcess];
@@ -96,10 +72,18 @@
     NSString *dateId = self.dateId;
     NSString *menuId = self.menuId;
     
-    NSString *postString = [NSString stringWithFormat:@"&payer_email=%@",payer_email];
+    NSString *userName = self.name;
+    NSString *userAdress = self.adress;
+    NSString *userPhone = self.phone;
+    
+    NSString *postString = [NSString stringWithFormat:@"&payerEmail=%@",payer_email];
     postString = [NSString stringWithFormat:@"%@&chefId=%@", postString,chefId];
     postString = [NSString stringWithFormat:@"%@&dateId=%@", postString,dateId];
     postString = [NSString stringWithFormat:@"%@&menuId=%@", postString,menuId];
+    
+    postString = [NSString stringWithFormat:@"%@&userName=%@", postString,userName];
+    postString = [NSString stringWithFormat:@"%@&userAdress=%@", postString,userAdress];
+    postString = [NSString stringWithFormat:@"%@&userPhone=%@", postString,userPhone];
     
     [aNSMutableURLRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -132,9 +116,13 @@
     NSLog(@"connectionDidFinishLoading");
     NSLog(@"Succeeded! Received %d bytes of data",[self.responseData length]);
     
+    NSString *strData = [[NSString alloc]initWithData:self.responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"RESPONSE:%@",strData);
+    
     // convert from JSON
     NSError *myError = nil;
     NSArray *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+   
     if(res != nil)
     {
         NSLog(@"mobieURL:%@",[res valueForKey:@"mobile-url"]);

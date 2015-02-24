@@ -16,8 +16,8 @@
 
 
 @property (weak, nonatomic)  NSString *name;
-@property (weak, nonatomic)  NSString *direction;
-@property (weak, nonatomic)  NSString *cellphone;
+@property (weak, nonatomic)  NSString *adress;
+@property (weak, nonatomic)  NSString *phone;
 @property (weak, nonatomic)  NSString *email;
 
 -(void)goToNextScene;
