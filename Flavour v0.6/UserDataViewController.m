@@ -21,7 +21,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([defaults objectForKey:@"userName"] != nil)
     {
-        _nameField.text = [defaults objectForKey:@"userName"];
+        _nameField.text = [defaults objectForKey:@"userName"];  
     }
     if([defaults objectForKey:@"userDirection"] != nil)
     {
@@ -37,6 +37,13 @@
     }
 
     
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [self.view endEditing:YES]; // dismiss the keyboard
+    
+    [super touchesBegan:touches withEvent:event];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,19 +66,17 @@
         orderingViewController.menuId = _menuId;
         orderingViewController.dateId = _dateId;
         
-        orderingViewController.name = _nameField.text;
+        orderingViewController.name = _nameField.text;;
         orderingViewController.adress = _directionField.text;
         orderingViewController.phone = _cellphoneField.text;
         orderingViewController.email = _emailField.text;
+        orderingViewController.cantidad = _peopleCount;
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setValue:_nameField.text forKey:@"userName"];
         [defaults setValue:_directionField.text forKey:@"userDirection"];
         [defaults setValue:_cellphoneField.text forKey:@"userCellphone"];
         [defaults setValue:_emailField.text forKey:@"userMail"];
-        
-        
-
     }
 }
 

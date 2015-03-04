@@ -16,9 +16,9 @@
 @property (strong, nonatomic) NSString *menuId;
 @property (strong, nonatomic) NSString *peopleCount;
 
-@property (weak, nonatomic) IBOutlet UITextField *nameField;
-@property (weak, nonatomic) IBOutlet UITextField *directionField;
-@property (weak, nonatomic) IBOutlet UITextField *cellphoneField;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UITextField *directionField;
+@property (strong, nonatomic) IBOutlet UITextField *cellphoneField;
+@property (strong, nonatomic) IBOutlet UITextField *emailField;
 
 @end

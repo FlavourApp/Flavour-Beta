@@ -15,11 +15,13 @@
 @property (strong, nonatomic) NSString *menuId;
 
 
-@property (weak, nonatomic)  NSString *name;
-@property (weak, nonatomic)  NSString *adress;
-@property (weak, nonatomic)  NSString *phone;
-@property (weak, nonatomic)  NSString *email;
+@property (strong, nonatomic)  NSString *name;
+@property (strong, nonatomic)  NSString *adress;
+@property (strong, nonatomic)  NSString *phone;
+@property (strong, nonatomic)  NSString *email;
+@property (strong, nonatomic)  NSString *cantidad;
 
--(void)goToNextScene;
+- (void)goToNextScene;
+- (void)gotoSuccess;
 
 @end

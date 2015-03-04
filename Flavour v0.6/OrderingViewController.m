@@ -82,8 +82,12 @@
     postString = [NSString stringWithFormat:@"%@&menuId=%@", postString,menuId];
     
     postString = [NSString stringWithFormat:@"%@&userName=%@", postString,userName];
-    postString = [NSString stringWithFormat:@"%@&userAdress=%@", postString,userAdress];
+    postString = [NSString stringWithFormat:@"%@&userAddress=%@", postString,userAdress];
     postString = [NSString stringWithFormat:@"%@&userPhone=%@", postString,userPhone];
+    postString = [NSString stringWithFormat:@"%@&cantidad=%@", postString,self.cantidad];
+   
+    
+    NSLog(@"postString:%@",postString);
     
     [aNSMutableURLRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -110,8 +114,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError");
     NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error de conexión" delegate:self cancelButtonTitle:@"Reintentar" otherButtonTitles:nil, nil];
-    [alert show];
+
 }
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"connectionDidFinishLoading");
@@ -130,6 +133,13 @@
         NSURL *myURL = [NSURL URLWithString:[res valueForKey:@"mobile-url"]];
         [self processPayment:myURL];
     }
+}
+
+- (void)gotoSuccess
+{
+    NSLog(@"gotoSuceess");
+    SuccessViewController *succesView = [[SuccessViewController alloc] initWithNibName:@"SuccessViewController" bundle:nil];
+    [self presentViewController:succesView animated:YES completion:nil];
 }
 
 @end

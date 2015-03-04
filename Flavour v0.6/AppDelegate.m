@@ -10,6 +10,7 @@
 #import "SuccessViewController.h"
 #import "OrderingViewController.h"
 #import "globals.h"
+#import "myNavViewController.h"
 
 
 @interface AppDelegate ()
@@ -71,24 +72,21 @@
         NSString *message = @"";
         
         if ([url.description containsString:@"success"]){
-            // falla al procesar el cobro
-            //NSLog(@"Entramos a Failure");
+
             message = @"El servicio de pago informó que no se ha realizado el pago. Por favor intenta más tarde";
             [[[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }else{
-            // el cobro ha sido realizado.
+            
+            SuccessViewController *aKHDLandingViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SuccessViewController"];
+            [(UINavigationController *)self.window.rootViewController pushViewController:aKHDLandingViewController animated:NO];
             
             /*
-            SuccessViewController *aSuccessViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SuccessViewController"];
-             [(UINavigationController *)self.window.rootViewController pushViewController:aSuccessViewController animated:NO];
-             */
-            
-            
             UIViewController *presentingController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+            
             SuccessViewController *controller = (SuccessViewController *)[presentingController.storyboard instantiateViewControllerWithIdentifier: @"SuccessViewController"];
             [presentingController presentViewController:controller animated:YES completion:nil];
+            */
             
-            //[self.window.rootViewController presentViewController: controller animated:YES completion:nil];
 
 
 

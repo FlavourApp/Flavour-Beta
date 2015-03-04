@@ -25,6 +25,7 @@
 		807FBB741A11825700B20301 /* chefObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB731A11825700B20301 /* chefObject.m */; };
 		807FBB771A11A04E00B20301 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB761A11A04E00B20301 /* MenuTableViewController.m */; };
 		807FBB7A1A11A18E00B20301 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FBB791A11A18E00B20301 /* MenuTableViewCell.m */; };
+		809BDA9A1AA6930800C779B9 /* myNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 809BDA991AA6930800C779B9 /* myNavViewController.m */; };
 		80A39F9A1A5E0874000A7781 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A39F991A5E0874000A7781 /* SuccessViewController.m */; };
 		80A8B1901A1429DB00689579 /* globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A8B18F1A1429DB00689579 /* globals.m */; };
 		80A8B1921A14462500689579 /* iphoneButtonBig[5].png in Resources */ = {isa = PBXBuildFile; fileRef = 80A8B1911A14462500689579 /* iphoneButtonBig[5].png */; };
@@ -86,6 +87,8 @@
 		807FBB761A11A04E00B20301 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		807FBB781A11A18E00B20301 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		807FBB791A11A18E00B20301 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		809BDA981AA6930800C779B9 /* myNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myNavViewController.h; sourceTree = "<group>"; };
+		809BDA991AA6930800C779B9 /* myNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myNavViewController.m; sourceTree = "<group>"; };
 		80A39F981A5E0874000A7781 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
 		80A39F991A5E0874000A7781 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
 		80A8B18E1A1429DB00689579 /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				80DB69561A84567D00472BE5 /* ComunaViewController.m */,
 				806AE6B81A0AF4D0007C269A /* LoadingViewController.h */,
 				806AE6B91A0AF4D0007C269A /* LoadingViewController.m */,
+				809BDA981AA6930800C779B9 /* myNavViewController.h */,
+				809BDA991AA6930800C779B9 /* myNavViewController.m */,
 				806AE6AF1A0AF2B6007C269A /* TableViewController.h */,
 				806AE6B01A0AF2B6007C269A /* TableViewController.m */,
 				806AE6B11A0AF2B6007C269A /* TableViewCell.h */,
@@ -352,6 +357,7 @@
 				80DB69571A84567D00472BE5 /* ComunaViewController.m in Sources */,
 				806AE6C61A0B069D007C269A /* DateTableViewCell.m in Sources */,
 				806AE6B51A0AF2B6007C269A /* TableViewController.m in Sources */,
+				809BDA9A1AA6930800C779B9 /* myNavViewController.m in Sources */,
 				806AE6B71A0AF2B6007C269A /* DetailViewController.m in Sources */,
 				801BDED91A7FEFC400D797D9 /* UserDataViewController.m in Sources */,
 			);

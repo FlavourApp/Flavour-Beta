@@ -123,7 +123,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bca-sz-swz">
                                 <rect key="frame" x="40" y="265" width="240" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -661,10 +661,10 @@
                     <navigationItem key="navigationItem" title="Confirmar Pago" id="4lw-Yv-krb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="cellphoneField" destination="RuZ-Pu-OS1" id="e5E-r3-Edm"/>
-                        <outlet property="directionField" destination="swA-q3-8Fz" id="lEB-ea-5Uy"/>
-                        <outlet property="emailField" destination="8eg-B2-Jje" id="k7W-Ca-2Cv"/>
-                        <outlet property="nameField" destination="F48-Vz-e2I" id="xmX-tQ-ZP6"/>
+                        <outlet property="cellphoneField" destination="RuZ-Pu-OS1" id="lbT-Nv-4cI"/>
+                        <outlet property="directionField" destination="swA-q3-8Fz" id="lnz-Cx-gMe"/>
+                        <outlet property="emailField" destination="8eg-B2-Jje" id="elC-Ud-Mnn"/>
+                        <outlet property="nameField" destination="F48-Vz-e2I" id="KFM-mO-W6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35c-i9-LlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -785,7 +785,7 @@ Se enviará un mail para confirmar su reserva. ¡Gracias!</string>
         <!--Item-->
         <scene sceneID="OSf-TI-gPv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ecb-Np-vr5" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ecb-Np-vr5" customClass="myNavViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="l1s-8j-h8S"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Aj-3v-8gF">
