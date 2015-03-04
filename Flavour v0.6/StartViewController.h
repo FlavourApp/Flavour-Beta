@@ -11,6 +11,9 @@
 
 
 @interface StartViewController : UIViewController
+{
+    bool timerBool;
+}
 
 @property (strong, nonatomic) NSMutableArray *comunas;
 @property (strong, nonatomic) IBOutlet UIButton *startButton;

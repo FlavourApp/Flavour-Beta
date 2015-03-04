@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cFg-yp-kVg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9g5-of-xxL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -75,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbi-bq-Ve2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-462" y="665"/>
+            <point key="canvasLocation" x="70" y="665"/>
         </scene>
         <!--Detalle de Chef-->
         <scene sceneID="dpj-vs-73H">
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NB-bV-wus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="665"/>
+            <point key="canvasLocation" x="534" y="665"/>
         </scene>
         <!--Fechas Disponibles-->
         <scene sceneID="JG8-Rx-EGp">
@@ -195,7 +195,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vJ-dr-41X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479" y="665"/>
+            <point key="canvasLocation" x="1011" y="665"/>
         </scene>
         <!--Menús disponibles-->
         <scene sceneID="eUx-NQ-p4r">
@@ -278,7 +278,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y30-UL-xfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935" y="665"/>
+            <point key="canvasLocation" x="1467" y="665"/>
         </scene>
         <!--Confirmar Pedido-->
         <scene sceneID="ox1-vh-cIr">
@@ -493,7 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sf0-Ss-Ceu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1400" y="665"/>
+            <point key="canvasLocation" x="1932" y="665"/>
         </scene>
         <!--Confirmar Pago-->
         <scene sceneID="Fpj-U0-dCg">
@@ -669,7 +669,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35c-i9-LlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849" y="665"/>
+            <point key="canvasLocation" x="2381" y="665"/>
         </scene>
         <!--Ordering View Controller-->
         <scene sceneID="fFD-C5-m6Z">
@@ -715,11 +715,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="nyq-1v-8RI" kind="show" identifier="orderingSuccess" id="vut-nt-QQq"/>
+                        <segue destination="cFg-yp-kVg" kind="push" id="0Nf-gO-rnE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC3-Ge-Iqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="665"/>
+            <point key="canvasLocation" x="2381" y="1445"/>
         </scene>
         <!--Success View Controller-->
         <scene sceneID="li0-7f-Y60">
@@ -747,7 +748,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cFg-yp-kVg" kind="presentation" id="Zzs-BX-Uv2"/>
+                                    <segue destination="9g5-of-xxL" kind="presentation" id="Zzs-BX-Uv2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxT-Zj-2rB">
@@ -780,35 +781,12 @@ Se enviará un mail para confirmar su reserva. ¡Gracias!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hif-CN-93F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="-12"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="OSf-TI-gPv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ecb-Np-vr5" customClass="myNavViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="l1s-8j-h8S"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Aj-3v-8gF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.58039215690000001" green="0.72549019609999998" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="GSS-1e-XVr" kind="relationship" relationship="rootViewController" id="6f5-1f-IHB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aPh-xl-3Ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-970" y="665"/>
+            <point key="canvasLocation" x="1634" y="1696"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="Hdj-TK-9nD">
             <objects>
-                <viewController id="cFg-yp-kVg" customClass="StartViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" id="cFg-yp-kVg" customClass="StartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hyN-K8-6Og"/>
                         <viewControllerLayoutGuide type="bottom" id="pvi-3P-P6f"/>
@@ -817,18 +795,9 @@ Se enviará un mail para confirmar su reserva. ¡Gracias!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo-1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fsS-id-GC0">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="fondo-1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fsS-id-GC0">
                                 <rect key="frame" x="-7" y="20" width="327" height="554"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Con Flavour, podrás ordenar un Chef profesional a tu casa, de forma rápida, sencilla, segura y entretenida." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww0-bw-lc9">
-                                <rect key="frame" x="26" y="292" width="269" height="99"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="99" id="0Hn-ek-CuJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0na-XG-77z">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <color key="backgroundColor" red="0.58039215686274515" green="0.72549019607843135" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -844,6 +813,15 @@ Se enviará un mail para confirmar su reserva. ¡Gracias!</string>
                                     <segue destination="Mgc-XC-eqR" kind="show" id="FyA-q2-gnb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Con Flavour, podrás ordenar un Chef profesional a tu casa, de forma rápida, sencilla, segura y entretenida." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww0-bw-lc9">
+                                <rect key="frame" x="26" y="292" width="269" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="0Hn-ek-CuJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -859,6 +837,7 @@ Se enviará un mail para confirmar su reserva. ¡Gracias!</string>
                             <constraint firstItem="Ww0-bw-lc9" firstAttribute="leading" secondItem="zqt-A1-7Bm" secondAttribute="leadingMargin" constant="10" id="pon-Gc-UYn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="x74-gv-00Y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bgImageView" destination="fsS-id-GC0" id="yMy-IT-bES"/>
@@ -867,7 +846,7 @@ Se enviará un mail para confirmar su reserva. ¡Gracias!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qla-pf-Bs3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2371" y="665"/>
+            <point key="canvasLocation" x="-1827" y="1445"/>
         </scene>
         <!--Comuna View Controller-->
         <scene sceneID="iVh-SB-qtq">
@@ -923,7 +902,7 @@ Se enviará un mail para confirmar su reserva. ¡Gracias!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WiR-zf-4di" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1889" y="665"/>
+            <point key="canvasLocation" x="-1357" y="665"/>
         </scene>
         <!--Loading View-->
         <scene sceneID="eHL-3f-vc7">
@@ -966,16 +945,38 @@ Se enviará un mail para confirmar su reserva. ¡Gracias!</string>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="ecb-Np-vr5" kind="showDetail" identifier="loadingSuccess" id="mDL-dY-kCE"/>
+                        <segue destination="GSS-1e-XVr" kind="push" identifier="loadingSuccess" id="aVX-iu-Hlm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPJ-Sb-Qqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1415" y="665"/>
+            <point key="canvasLocation" x="-751" y="644"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7OM-wg-JJC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9g5-of-xxL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k58-qd-vfc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.58039215690000001" green="0.72549019609999998" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cFg-yp-kVg" kind="relationship" relationship="rootViewController" id="a59-Iy-Tqr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6VG-W5-RLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2507" y="665"/>
         </scene>
     </scenes>
     <resources>
         <image name="fondo-1.jpg" width="880" height="1323"/>
         <image name="fondo-blur.jpg" width="880" height="1323"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Nf-gO-rnE"/>
+    </inferredMetricsTieBreakers>
 </document>

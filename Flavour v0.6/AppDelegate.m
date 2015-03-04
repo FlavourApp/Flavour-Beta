@@ -10,7 +10,7 @@
 #import "SuccessViewController.h"
 #import "OrderingViewController.h"
 #import "globals.h"
-#import "myNavViewController.h"
+#import "StartViewController.h"
 
 
 @interface AppDelegate ()
@@ -68,28 +68,20 @@
         return YES;
     }else if ([url.scheme isEqualToString:@"flavour"]) {
         // khipu nos ha invocado, con el resultado del cobro
-        //[(UINavigationController *)self.window.rootViewController popToRootViewControllerAnimated:NO];
+        
         NSString *message = @"";
         
         if ([url.description containsString:@"success"]){
-
+            //pago completado!
+            SuccessViewController *successViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SuccessViewController"];
+            [(UINavigationController *)self.window.rootViewController pushViewController:successViewController animated:NO];
+        }else{
+            //error en el pago
             message = @"El servicio de pago informó que no se ha realizado el pago. Por favor intenta más tarde";
             [[[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        }else{
             
-            SuccessViewController *aKHDLandingViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SuccessViewController"];
-            [(UINavigationController *)self.window.rootViewController pushViewController:aKHDLandingViewController animated:NO];
-            
-            /*
-            UIViewController *presentingController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
-            
-            SuccessViewController *controller = (SuccessViewController *)[presentingController.storyboard instantiateViewControllerWithIdentifier: @"SuccessViewController"];
-            [presentingController presentViewController:controller animated:YES completion:nil];
-            */
-            
-
-
-
+            StartViewController *startViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"StartViewController"];
+            [(UINavigationController *)self.window.rootViewController pushViewController:startViewController animated:NO];
         }
         return YES;
     }

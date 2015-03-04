@@ -20,15 +20,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    timerBool = NO;
+    
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    
     _startButton.hidden = true;
     self.comunas = [[NSMutableArray alloc] init];
     
-    NSString *serverIp = [globals getComunasIp];
-    
-    self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:serverIp]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [self makeConnection];
     
     //code to animate bg image
     /*
@@ -60,7 +59,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) makeConnection
+{
+    NSString *serverIp = [globals getComunasIp];
+    
+    self.responseData = [NSMutableData data];
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:serverIp]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    timerBool = YES;
+    [NSTimer scheduledTimerWithTimeInterval: 20.0
+                                     target: self
+                                   selector: @selector(timerEnd)
+                                   userInfo: nil
+                                    repeats: NO];
+    
+    
+}
 
+- (void) timerEnd
+{
+    if(timerBool)
+    {
+        NSString *message = @"Hubo un error al cargar datos. Seguiremos intentando.";
+        [[[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"OK"   otherButtonTitles:nil] show];
+        [self makeConnection];
+    }
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

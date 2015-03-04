@@ -68,8 +68,8 @@
     NSLog(@"PREPARING SEGUE");
     
     if ([[segue identifier] isEqualToString:@"loadingSuccess"]) {
-        UINavigationController *nav = segue.destinationViewController;
-        TableViewController *tableViewController = (TableViewController *)nav.topViewController;
+        
+        TableViewController *tableViewController =  segue.destinationViewController;
         
         tableViewController.fullChefList = [NSMutableArray arrayWithArray:_fullChefList];
     }

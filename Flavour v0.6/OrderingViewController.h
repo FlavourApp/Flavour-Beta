@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 @interface OrderingViewController : ViewController
+{
+    bool timerBool;
+}
+
 
 @property (strong, nonatomic) NSString *chefId;
 @property (strong, nonatomic) NSString *dateId;
@@ -22,6 +26,5 @@
 @property (strong, nonatomic)  NSString *cantidad;
 
 - (void)goToNextScene;
-- (void)gotoSuccess;
 
 @end

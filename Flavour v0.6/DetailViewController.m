@@ -33,7 +33,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    _TitleLabel.text = _chef.fullName;
+    // this will appear as the title in the navigation bar
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:20.0];
+    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    label.textAlignment = NSTextAlignmentCenter;
+    // ^-Use UITextAlignmentCenter for older SDKs.
+    label.textColor = [UIColor whiteColor]; // change this color
+    self.navigationItem.titleView = label;
+    label.text = _chef.fullName;
+    [label sizeToFit];
+    
     _bioText.text = _chef.longBio;
     _bioText.editable = NO;
     self.dates = [[NSArray alloc] init];

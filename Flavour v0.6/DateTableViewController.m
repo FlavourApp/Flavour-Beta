@@ -23,6 +23,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // this will appear as the title in the navigation bar
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:20.0];
+    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    label.textAlignment = NSTextAlignmentCenter;
+    // ^-Use UITextAlignmentCenter for older SDKs.
+    label.textColor = [UIColor whiteColor]; // change this color
+    self.navigationItem.titleView = label;
+    label.text = @"Fecha";
+    [label sizeToFit];
+    
     NSLog(@"Date table loaded");
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

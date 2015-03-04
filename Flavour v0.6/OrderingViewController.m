@@ -11,6 +11,7 @@
 #import <CommonCrypto/CommonHMAC.h>
 #import "SuccessViewController.h"
 #import "globals.h"
+#import "StartViewController.h"
 
 @interface OrderingViewController ()
 
@@ -22,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    timerBool = NO;
     // Do any additional setup after loading the view.
     [self.navigationController setNavigationBarHidden:YES];
     self.responseData = [NSMutableData data];
@@ -93,6 +96,23 @@
     
     [[NSURLConnection alloc] initWithRequest:aNSMutableURLRequest delegate:self];
     
+    timerBool = YES;
+    [NSTimer scheduledTimerWithTimeInterval: 20.0
+                                     target: self
+                                   selector: @selector(timerEnd)
+                                   userInfo: nil
+                                    repeats: NO];
+    
+}
+
+- (void) timerEnd
+{
+    if(timerBool)
+    {
+        NSString *message = @"Hubo un error al contactar al pago sus datos. Lo lamentamos.";
+        [[[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"OK"   otherButtonTitles:nil] show];
+        [self performSegueWithIdentifier:@"loadingFailure" sender:self];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -129,17 +149,12 @@
    
     if(res != nil)
     {
+        timerBool = NO;
         NSLog(@"mobieURL:%@",[res valueForKey:@"mobile-url"]);
         NSURL *myURL = [NSURL URLWithString:[res valueForKey:@"mobile-url"]];
         [self processPayment:myURL];
     }
 }
 
-- (void)gotoSuccess
-{
-    NSLog(@"gotoSuceess");
-    SuccessViewController *succesView = [[SuccessViewController alloc] initWithNibName:@"SuccessViewController" bundle:nil];
-    [self presentViewController:succesView animated:YES completion:nil];
-}
 
 @end
